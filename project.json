@@ -1,0 +1,169 @@
+{
+  "name": "Consumidor Descarga de Reportes Diarios Customer Service",
+  "description": "",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.Excel.Activities": "[2.12.3]",
+    "UiPath.Mail.Activities": "[1.15.2]",
+    "UiPath.System.Activities": "[22.4.4]",
+    "UiPath.Testing.Activities": "[22.4.3]",
+    "UiPath.UIAutomation.Activities": "[22.4.7]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "22.4.4.0",
+  "projectVersion": "1.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "88d2c39a-c1e6-4d61-bf80-6461ab599297",
+        "dataVariationFilePath": ".variations\\Tests_Tests.json",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\GeneralTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "a33f4b86-9074-4c65-b285-1b4af7c56355",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\GetTransactionDataTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "db1b5bea-5851-4583-9bad-aa70532acc62",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\InitAllApplicationsTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "292f09f4-795d-4eba-8b7f-d65b5a883479",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\InitAllSettingsTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "7725e1fc-420e-487e-9ce5-4d9b9120149e",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\MainTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "1b833b14-c7d2-418b-8526-a4453dc46cec",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\ProcessTestCase.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "4dce0d61-741e-49d7-8ff1-134ee13adaed",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\WorkflowTestCaseTemplate.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "1aec0936-04f7-4b0f-9d0c-0425208e472b",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\STR005.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "6e80a3eb-29f5-499f-abb9-c28cbe8eda85",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\STR002.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "aa139688-b460-4edf-af2e-9a6dc3a0a9f8",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\STR004.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "880c506d-931a-4195-9641-b4a0d6fd78fb",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\STR001 y 003.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "d4f46bf3-954a-40af-bfbb-e1a540500756",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\STR006.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "f1e26860-0b8c-4d41-ba4e-44e63b9f2755",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\STR009.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "e18f773b-8e59-4f3e-9757-4c8b113969f4",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\STR0010.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "da21d48f-89f0-4338-8d0c-d721d1d0e074",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\STR008.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "4f652b83-4581-4927-8352-8ac791c21fde",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\STR007.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "f1efcc9b-6ed6-4306-a442-5b46b1fefe23",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\STR011.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "90f1efaa-7785-457c-b7cc-3b1e4aab0f83",
+        "testCaseType": "TestCase",
+        "fileName": "Tests\\STR012.xaml"
+      }
+    ],
+    "modernBehavior": true
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "c6c347a9-846d-43a6-8935-7a314a4443ea",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Legacy"
+}

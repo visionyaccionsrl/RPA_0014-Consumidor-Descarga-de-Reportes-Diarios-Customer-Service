@@ -1,0 +1,250 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Login_Oracle" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_OracleURL" Type="InArgument(x:String)" />
+    <x:Property Name="io_DtLog" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="in_OracleCredentials" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Login_Oracle.in_OracleCredentials>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Login_Oracle.in_OracleCredentials>
+  <sap:VirtualizedContainerService.HintSize>663,2463</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="68">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Ingresa a la dirección ‘in_OracleURL’ proporcionada.&#xA;Busca e ingresa las credenciales ‘in_OracleCredentials’ de login.&#xA;Si el login es correcto continúa. Sino envía un mail informando el fallo.&#xA;Trata de clickear en la responsabilida ‘in_Responsabilidad’ indicada.&#xA;Si el click es correcto continúa. Sino encuentra el elemnto a clickear entonces envía un mail.&#xA;&#xA;Argumentos:&#xA;in_Config&#xA;in_Responsabilidad&#xA;in_OracleURL&#xA;in_MailServer&#xA;in_MailPort&#xA;in_MailCredentail&#xA;in_OracleCredentials&#xA;io_DtLog" DisplayName="LoginOracle" sap:VirtualizedContainerService.HintSize="538,2398" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="OracleUserName" />
+      <Variable x:TypeArguments="ss:SecureString" Name="OraclePassword" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logger Inicio" sap:VirtualizedContainerService.HintSize="496,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Logger.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_TransactionId">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_LogType">Trace</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_StepName">Initialization</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Message">Iniciando LoginOracle</InArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DtLog">[io_DtLog]</InOutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Utilizar Navegador Chrome: Conexión" sap:VirtualizedContainerService.HintSize="496,1917" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="IfNotOpen" ScopeGuid="a3605331-bea5-4b63-8798-023de832aba6" Version="V1" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="462,1701" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_OracleCredentials]" DisplayName="Get Credential Oracle" sap:VirtualizedContainerService.HintSize="420,51" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[OraclePassword]" Username="[OracleUserName]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:GetRobotCredential>
+            <ui:CommentOut sap2010:Annotation.AnnotationText="Se comentó porque el click cambiaba la url cuando no deberia" DisplayName="Comentar Click Language" sap:VirtualizedContainerService.HintSize="420,108" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="376,248" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ClickType="Single" DisplayName="Click 'Language'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a3605331-bea5-4b63-8798-023de832aba6" Version="V1">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://oraebsapp910-bp.berryplastics.com:8011/OA_HTML/AppsLocalLogin.jsp?langCode=ESA" DesignTimeRectangle="533, 283, 167, 19" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl parentid='myForm' tag='TABLE' idx='1' /&gt;&lt;webctrl aaname='Español Latinoamericano' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='myForm' tag='TABLE' /&gt;&lt;webctrl aaname='Español Latinoamericano' tag='IMG' type='' class='' /&gt;" Guid="7e5038ab-306b-4e60-9ddf-a8f65c344a57" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKsAAAAXCAYAAAB04L8XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGnSURBVGhD7ZdrasMwEIR7p96pd8ppXfbHwDCstJZkJ1Y7Hwg0D/kBS3C+DmM2wcNqtsHDarbBw2q2wcNqtiEd1u+fV7reBd9v9L7Vs1b5KFdf7wk89Z26w/opcO+Z56jOzFxT4fNXXO9pPPWdHjmsK1TPvvpuq+fNPNPDio52WWsG4Gc5e1kewM/yzGOqPEBHu5nP+6CXAfgzOXva4T3DPc2zjPeAOzOZ7hn4rRxMfbP2NPaqAe+DLGevlYNKK2dyRvtnNbxWDjLNtPrwWhqM6qDqsGY/aHXhtXKgmpn6ZUWeddSveppfrZUqB+hp/24N4Gt+tw7OdBR0tLuqmVs/AwLVAXuaX62VKg+4o/27dcCe5rNaF1AdnOkwnGt3VTPLf7DQRV/Pfloro/lf00qWq5d1QNVd1czSZwBgjb1q8G6tjOb/TQdVh3UvC1Y1M/UHK2hlrDUD8HmBSgfwelkLPseLOZvrPqh0AC/LAs25M6oDeL2M6XlnMs4rHcDLMiYd1hWqGxozi4fVbIOH1WzD5cNqzF14WM02eFjNNnhYzTZ4WM0mHMcvwKMSqYUeEBgAAAAASUVORK5CYII=" InformativeScreenshot="faca6e3f05bbcbd7725ac3db75a6c813.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='root' title='Cone*' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Username'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="420,216" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="a3605331-bea5-4b63-8798-023de832aba6" Text="[OracleUserName]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://oraebsapp910-bp.berryplastics.com:8011/OA_HTML/AppsLocalLogin.jsp?langCode=E" DesignTimeRectangle="535, 183, 247, 21" ElementType="InputBox" FriendlyName="'INPUT M__Id'" FullSelectorArgument="&lt;webctrl parentid='myForm' tableRow='1' tag='TABLE' idx='1' /&gt;&lt;webctrl tag='INPUT' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='myForm' tag='TABLE' /&gt;&lt;webctrl tag='INPUT' type='text' class='x4' aaname='Nombre de Usuario' /&gt;" Guid="a0a89c60-36bf-45b5-a59d-04d89b02dd7d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPsAAAAZCAYAAAD3/lgvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADxSURBVHhe7dzRiYNAGIVRS7ADQUlhEUErsL48pBitYsIEdV3WLWD8z4FLQPHxE/LgVAkIQewQxBH7sixpHMf0eDxSXddmVvByx7nn3PXuiP35fF4+ZGblLne9O2JvmuZ78/1+b1eAUuWOc89t225XTrHvb4JdVfk7DyX70/T2K3a4GbFDEGKHIMQOQYgdghA7BCF2CELsEITYIQixQxBihyDEDkGIHYIQOwTxb+z5u9d8w/fsUL7X6/Xt+fJ7difVmN1vfd9vhZ9iz2dVDcOQuq67fMjMylk+g26aprSu61b4KXbg3n7FPs+zmd1oP1L6AEtvfAzAVIO7AAAAAElFTkSuQmCC" InformativeScreenshot="b2219fbd0fbc9e4881c56356e6e1c736.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='root' title='Con*' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="407, 186, 116, 15" ElementType="Text" FriendlyName="'Nombre de Usuario'" FullSelectorArgument="&lt;webctrl parentid='myForm' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='myForm' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='' aaname='Nombre de Usuario' check:innerText='Nombre de Usuario' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHgAAAATCAYAAABbV8lLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJfSURBVGhD7ZaBjcMgDEXZkLEYJaNklIzBGYOJvzFto95JJ8SXIpUA9rcfSRry1tLagBfXBry4NuDFBYCvI+YQYj6udkN0phzike3tb3WmkEM62+iPVWoIKT/PduYUQh5tzu7/sR7W4QB2mr4BLwQ4xhyt8Q34/wB+KAfwkU9+klUzBsC1OH7aTZEV2pGPKPMljl5/x/XXNl0HHbSUU1mjcvS3TLneHDqO39amZAHPa0B9CvhSddClNtiDLH3u3vnw3Xtj/0bWmNV7i2EPKvdJ9o6fVxfw1QL3RADYmVOBa1NlLEWLodoU2SsApHYeS55m/C6WZIqzjQPBWuvD1MC5nP8erM8Ac+/6ohof6lIBEHCJo3J7vofDgP0ED6o/RRPAPLiLLkG9+yxsli0Gx85abV7Hdppe1gNwXoMFiawPunEX7+wbYnc9AGz8iqwXBIxCSOYgFuk6AHbR6HUOmNQBaMBD0C8BazdscAa47pXX2H15TXUao6FyDU4s8CJyYrHGZlY4Eu/29Row1hXpP9CngMeD8hBw31C+AXJ/0vhfAaxjD3nq+rHRvobY+mBq2G81Aez40+L8rWfWC/TZPjAwfg142Eu/HgImcZDb7JCU5+enFccOYLt3epBIpiD2CwUqeb6mjauNGSA21TzoBbzK2EJsY/RZcyNgid3mpj5J0AME6vXjPWBriFUDy2tF1TUUimM0XOde/Ys2gEm1CFk/zmvptZHeQvjUYg3asyfMS9esT33NLBd5PghS36/30dyp634HmMR9UvtNPwDw1nragBfXBry4NuDFtQEvrZx/AOB1InQIZr4bAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="420,241" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="a3605331-bea5-4b63-8798-023de832aba6" SecureText="[OraclePassword]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://oraebsapp910-bp.berryplastics.com:8011/OA_HTML/AppsLocalLogin.jsp?langCode=ESA" DesignTimeRectangle="535, 205, 247, 21" ElementType="InputBoxPassword" FriendlyName="'INPUT M__Ida'" FullSelectorArgument="&lt;webctrl parentid='myForm' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='myForm' tag='TABLE' /&gt;&lt;webctrl type='password' tag='INPUT' class='x4' aaname='Contraseña' /&gt;" Guid="608f74b9-b467-44cf-9c7f-228ef335adcf" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPsAAAAZCAYAAAD3/lgvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACeSURBVHhe7dPBCYRAFETBDWFyEDPzMBEYs0bxF0FEl03A6SroU5/fp07bttWyLDVNU7XWzOzFm+e5eu+17/tZeNUVOzC2R+zruprZQLu7Yv89gPe7dy12GJjYIYTYIYTYIYTYIYTYIYTYIYTYIYTYIYTYIYTYIYTYIYTYIYTYIYTYIYTYIYTYIYTYIcTf2A/HYWbj7O4ROzAusUOEqi9HZLNePPUa/gAAAABJRU5ErkJggg==" InformativeScreenshot="67affb175b57a99f1ff716590aa8eafb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='root' title='Conexión' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="454, 208, 69, 15" ElementType="Text" FriendlyName="'Contraseña'" FullSelectorArgument="&lt;webctrl parentid='myForm' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='myForm' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='' aaname='Contraseña' check:innerText='Contraseña' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEkAAAATCAYAAADcZiBNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAG0SURBVFhH7ZTBjcIwFETTEV1ACdABFdAAtVAARVAEBXBEHLlm9Vhe9O0NsdmNdrWSR7Ki/G/PjCeOu76hiBZSBVpIFWghVWA0pP1+33ddN4zT6fTs/F+wB/bC3s7nc7/b7fr7/f7sTiMJiUXb7fYxJIBwsVjMEtThcEi4fwvoEQp7wQNh8axFEhJBrFar/nq9PiufmGtzfxXST5GExFFklODp4ovw5B2weULgq9k3dI87gzm32+3x9NdWN85jxC8ee1EXfMeTmNIEQ0iSlY4h5IhADJivqBz5uwHEk2TPd8CazWYzbBANucZ6rqUXPcV16rzyNMbrXPF2SDkJTw2OcWBmKqQpPXpqqSNXBNryArlrPOWImuLt3y1uFMwZkjWP/Xq9TgyrZT/yWouDeslTSRNUXdyxns/R+Bwh5dyv/ADvIOYw5M1R8lSjmYQkYRQ0BEV8hwxQl7RkiLrcY3Ph9NK1Lze15XI53B3UvEtyTzHAkqcpTZGEJCCIx1ZxoQl6CoCSIddh4nK5fJnrenmPx2MSDD6ir7g2eoq9kqeSJhgNqSFFC6kCLaQKtJAq0EIqou8/AOA0owLd5Ww0AAAAAElFTkSuQmCC" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Conexion'" sap:VirtualizedContainerService.HintSize="420,156" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a3605331-bea5-4b63-8798-023de832aba6" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://oraebsapp910-bp.berryplastics.com:8011/OA_HTML/AppsLocalLogin.jsp?langCode=ESA" DesignTimeRectangle="535, 233, 73, 19" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl parentid='myForm' tableRow='1' tag='TABLE' /&gt;&lt;webctrl aaname='Conexión' tableRow='5' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='myForm' tag='TABLE' /&gt;&lt;webctrl aaname='Conexión' type='' tag='IMG' class='' /&gt;" Guid="731e19a2-73de-4d32-822a-a0b52798e194" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE0AAAAXCAYAAABOHMIhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPTSURBVFhH7ZZbSJRBFMcF8S0TEvIhfIjQzMSQREjCJFK8ZA9WSITJWlmIl5KQlfDSpohmWkaClq2aWuF11coHU1PM8rLaJqaYaZqZVpiI+XjqfJdxZnd20X0oaPcPf3ZmzpyZ+X4738xnA1ZtWlZoZogLTTvcBuqqVIu3MRlAe93fAg0tBbC2Nm/RrnqSCxlZ5yQqrAyg1TcVwM/lKe5AluaikhTQNKslMutioLV1PITxiS7uAJborwujkK46I9FZFwOtTpMPq7/muAPQ1ul6IDPzKqSlJUNERDgUFuZw+/0t29jYGLR1djaDn5+vQftm/aBCBf2DnRIhUQSabrQbevvquIm0p6aGwdvbC1pba2F1dQ4mJgYhOPgIqNV3uf3/lf39DwrgeLHNuLunFioe5UuURBFo+Gp++PiKm0g7Lu48ZGenMW0DAx3g6bmXaftf/GlmCPJuXZYoiSLQ6jQFsLD4nptI29V1F4yP93NjsmdnRyAjQwmJiRcFyHNzoySG+V1dT8HNzQWcnXdAX98LEpufHxP+kNjYs0Ie1uVYQIA/2Tm4y8PDw0iMfj3NnduYF7+NQZLyuERJFIFWXp2+ofPMzs6O205boThNXteGhkqhLse8vDyhqqpEeLVx0bh4ORYTEwWTk0NCuby8SHhoOYZ9fXz2C3k4htwPTUMzd25TjksKkSiJItDwY46XoO+NQHNw2CosDMv4i3U5hg+4sjLL1OWyo+M2Ul5amgYnp+2kjlYqLwkgVaoUpp0ew9y5TdkktI3sNNzaIyPs2YeLw50h1/UXQ4PWj9F1LNO2tbVl+uKtjWARKN2uPwYd2+jcxoyvZ8KVoxIlUQTavTIlfJl/x02kHR8fY3AR4Bnj6+tD6vr/tr39FhIztXB6V/CM80ZFnYK8vOtMu/4Y5sxtzNPTWkhVKSRKogi04lIVDGifcRNp4yXg7r4b2toahbpW+1K4ORGc3AcfrLT0jlDWaKqZc8XUwukzDfPo7yzcZfips7w8Ax4ee4yeaebObcwNTcUQfSFQoiSKQGt6XgE19be5ifrGWwwfALc+Hs41NWVMXL7B8PzRv8FMLRz74UdzcnIiREZGwPBwN4mFhgZCe3uTUG5ufgxhYUEkRo9h7tzGnHotGtIzYyVKogg0VEaW4s+W/sxNtkTPzL6Fw0E7obGlUiIkioGWk58AvW803AEs0UnJJyEg1EWisy4G2shoP6iyo+H7jwnuIJbk3JuJcOCQE9xX35DorIuBhsJvEqtDBGDHTuyTqLAygIbSjTWSREu1Ioa9MWlxoVllWlZomxbAb0uEAKL+7+/EAAAAAElFTkSuQmCC" InformativeScreenshot="8d02616973e26735f705b0dd9fdc2a75.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='root' title='Conexión' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State Bienvenido" EnableIfExists="False" sap:VirtualizedContainerService.HintSize="420,636" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="a3605331-bea5-4b63-8798-023de832aba6" Version="V1">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="376,420" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logger Problema Login" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Logger.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_TransactionId">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_LogType">Error</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_StepName">Initialization</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Message">Problema al Iniciar Sesión</InArgument>
+                      <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DtLog">[io_DtLog]</InOutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendMail ID0 - Problema Login" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Mailing\SendMail.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_ID">0</InArgument>
+                      <InArgument x:TypeArguments="s:String[]" x:Key="in_Adjunto">[{}]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Body">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Subject">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <Throw DisplayName="Throw BE Falla Login" Exception="[New BusinessRuleException(&quot;Credenciales incorrectas de inicio de sesión.&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://oraebsapp910-bp.berryplastics.com:8011/OA_HTML/webtools/container_top.html" DesignTimeRectangle="22, 84, 217, 30" ElementType="Text" FriendlyName="'Bienvenido Luisa Aranda'" FullSelectorArgument="&lt;webctrl src='OA_HTML/webtools/container_top.html' tag='FRAME' /&gt;&lt;webctrl aaname=' Bienvenido*' /&gt;" FuzzySelectorArgument="&lt;webctrl src='OA_HTML/webtools/container_top.html' tag='FRAME' /&gt;&lt;webctrl aaname=' Bienvenido*' tag='TD' type='' class='toolbar' check:text='Bienvenido Luisa Aranda' /&gt;" Guid="2169427d-ca64-49d4-ba21-bb835cef8bc0" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAN0AAAAiCAYAAADbANzWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASDSURBVHhe7Z1Bbhw5DEV9p76Pl32DPkIukF2AAF55Yzj7LJJN1r5TTVd1iSLFT4ntqciewW/gbUoqifz8ZHeCAHk4nb8thJB5PCz88MPP1M/D29vbQgiZB5uOkMmw6QiZDJuOkMmw6QiZDJuOkMmw6QiZDJuOkMmw6QiZTLrpfn9/gv+kZePLT//Orx/L475+eW3W/uvckZvodvmx/Abrd/P6vOv+tHz9Bdbfw4fW6s/y9XK7+3R+Xl7gns/BUbVMNp0WJqBtPDHH5xbyXaRzU7qhwfQOXr7s5x2p6wfWyg7zAwfJ4RxXy2TT/VwuuzCP3/+Ytb9igv8NVbdjvkGOb+KPpepT+Ly/io6rZa7pZBL6C+uk0k1XzWGbtBXZTzbzFa5+9qzI3eFkDkyp4t8APw9S924EuTV3bGvyzOZpp/tKcmDd8TNQhiHUYVQrpaOAY6xDt78PIe9enpcL9MuOjls0qJqOY7ANY/ajn4rpWvqhkRmGqabDjbVSLzViIXM0iVSsIb2Amv1+IPyKaZzReY3YqXtXQG6+iW48Xtp4kJkLNhcILDwCT2XJURvD5QOMJOj6d3JBRm5p7oWx7UB9t33JGNRdCO3ddC07Z8LBoUg0Xc8oN9wlejJtz7ImsAWXvc5s6DzwzMUR7Evfq5+1A0DrYDUrz3VB691q72BKil4jUw/yNvVq96J3XWPqfR1tQnzOaGC6vVeqbleSMZhGkvOB7nfUEtWiNzg0iaazhoQ0QrmARIiAbtJatCJkFcKJoBKWZwFSwPS9PjeXa0HlfLsHFHknNpwmfr9FztP7JEf7LeniV1rc6DWQNWTunSvJZrkRDAthHEP1gT7bn5uv5Y7TamdQn3HTIYEEJEinISL2IJHJzfsqGWMsaKjxsCgC5u9tc/O5FvyZNR5TOL2313SqwO37FhwTviOIX5msorWt70G6phvVpfFZ6L9sDMijV5xn7qhl1Gw7/fokmi4yZMEZE5gjZaorqLlC0Uoxwj+ExyK2pO91uQWxaUOAbxBbFLW3Z9bu8FM4M60Ed4QxFdR7KyUX1ZQ170gLS/VTjI4l9E42BqgH8nW+luIXfWa2PlcGTTcwhEpchJJnqklBQDXp8ixIOhBNG2YDNLSII2tewLvudbmh86yx6pl4LywgwOeC8WbSdzTN1eRT96na6eflblBjX0+Aqpk19krVB2rW+i8ZA9JjRXKSc/O1zL4bMWi6asguyERGJBVUg5ggPZEKNjY4qdvGFNRZd9yLctNFQWCTe7wJNbF+gmsIvfYEc3T5hHrd8LVCxE0n9wXG9PrWGrv6JmPAfsSDNlvL7r5/3XQdkxSsWao5kIlEgB0tZNRcWLQVZUS3pmkHhz0/f2+cm83reg6YwoLTNDapMGiGDRDnyhZrudMYIsoHDVofozXedf0VDy+03zVQu8cNkPGZOAbcXNGgXcnV0mq8xvvSxt5h/BcphJBDYdMRMhk2HSGTYdMRMhk2HSGTYdMRMhk2HSGTYdMRMhk2HSGTeTidTkvhfD4TQv4y/E8hCZnKt+UffUFBHXSvtnAAAAAASUVORK5CYII=" InformativeScreenshot="9d5b8623519b32d36ab26be557af190f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='root' title='https://oraebsapp*-bp.berryplastics.com:*/OracleMyPage.home' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1382, 744" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="3abc1ebabb9e0c503fb82a3593eb228f.png" Selector="&lt;html app='chrome.exe' htmlwindowname='root' title='Conexión' /&gt;" Url="[in_OracleURL]" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
