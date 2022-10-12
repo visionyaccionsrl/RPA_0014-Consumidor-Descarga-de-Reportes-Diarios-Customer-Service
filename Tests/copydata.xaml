@@ -1,4 +1,23 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="630,575" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_ExtraData" Type="InArgument(x:String)" />
+    <x:Property Name="in_PathTargetFile" Type="InArgument(x:String)" />
+    <x:Property Name="in_PathSaveFile" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Main.in_ExtraData>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.in_ExtraData>
+  <this:Main.in_PathTargetFile>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.in_PathTargetFile>
+  <this:Main.in_PathSaveFile>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.in_PathSaveFile>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>630,1587</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="30">
       <x:String>System.Activities</x:String>
@@ -34,7 +53,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="23">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="29">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -58,9 +77,15 @@
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="476,510" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="520,1522" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="FiletoLoad" />
       <Variable x:TypeArguments="x:String" Name="TargetFile" />
@@ -74,26 +99,141 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_berry]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="434,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Calendario Berry Global" WorkbookPath="Data\Calendario Berry Global.xlsx" />
-    <ui:FilterDataTable DataTable="[dt_berry]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_berry]" SelectColumnsMode="Keep">
-      <ui:FilterDataTable.Filters>
-        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-          <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
-            <ui:FilterOperationArgument.Column>
-              <InArgument x:TypeArguments="x:String">["Dia"]</InArgument>
-            </ui:FilterOperationArgument.Column>
-            <ui:FilterOperationArgument.Operand>
-              <InArgument x:TypeArguments="s:DateTime">[Today]</InArgument>
-            </ui:FilterOperationArgument.Operand>
-          </ui:FilterOperationArgument>
-        </scg:List>
-      </ui:FilterDataTable.Filters>
-      <ui:FilterDataTable.SelectColumns>
-        <scg:List x:TypeArguments="InArgument" Capacity="4">
-          <x:Null />
-        </scg:List>
-      </ui:FilterDataTable.SelectColumns>
-    </ui:FilterDataTable>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[Today.ToString]" />
+    <Sequence sap:VirtualizedContainerService.HintSize="478,1430" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="Hoja" />
+        <Variable x:TypeArguments="x:Int32" Name="NroColumnas" />
+        <Variable x:TypeArguments="s:Int32[]" Name="ArrayColumns" />
+        <Variable x:TypeArguments="x:String" Name="Range" />
+        <Variable x:TypeArguments="s:String[]" Name="columnasstr" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="436,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Cargando datos: &quot; + in_PathTargetFile]" />
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,174" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Abre un csv, con algunas columnas como fecha. Luego copia todo el rango usado de &quot;A&quot; hasta &quot;BX&quot;." Code="Dim excel As Microsoft.Office.Interop.Excel.Application&#xA;Dim wbfl As Microsoft.Office.Interop.Excel.Workbook&#xA;Dim wsfl As Microsoft.Office.Interop.Excel.Worksheet&#xA;Dim wbtf As Microsoft.Office.Interop.Excel.Workbook&#xA;Dim wstf As Microsoft.Office.Interop.Excel.Worksheet&#xA;&#xA;excel = New Microsoft.Office.Interop.Excel.Application&#xA;&#xA;&#xA;Dim texttype(75,1) As Integer&#xA;'Coloca la columna como tipo Gral&#xA;For i As Integer = 0 To  75&#xA;&#x9;texttype(i,0) = i+1&#xA;&#x9;texttype(i,1) = 1&#xA;Next&#xA;&#xA;'Fecha Recibo OC”, “Fecha Req en PD”, “Feche Enb. Req”&#xA;'Coloca la columna como tipo DMY&#xA;For i As Integer = 28 To 30&#xA;&#x9;texttype(i,0) = i+1&#xA;&#x9;texttype(i,1) = 4&#xA;Next&#xA;&#xA;'“Fecha Real Cargue”, '“Fecha Estamada Arribo”&#xA;'Coloca la columna como tipo DMY&#xA;For i As Integer = 40 To 41&#xA;&#x9;texttype(i,0) = i+1&#xA;&#x9;texttype(i,1) = 4&#xA;Next&#xA;&#xA;'“Request_date”&#xA;'Coloca la columna como tipo DMY&#xA;texttype(45,0) = 46&#xA;texttype(45,1) = 4&#xA;&#xA;'“Fecha Est Salida”, “Fecha Real Salida”, '“Fecha Est Arribo”, “Fecha Real Salida”&#xA;'Coloca la columna como tipo DMY&#xA;For i As Integer = 67 To 70&#xA;&#x9;texttype(i,0) = i+1&#xA;&#x9;texttype(i,1) = 4&#xA;Next&#xA;&#xA;&#xA;'File to load&#xA;'wbfl = excel.Workbooks.Open(in_FileToLoad, [ReadOnly]:=False, [Format]:= 6, [Delimiter]:= &quot;;&quot;)'Open the first excel the file' &#xA;excel.Workbooks.OpenText([FileName]:=in_FileToLoad, [dataType]:=Microsoft.Office.Interop.Excel.XlTextParsingType.xlDelimited, _&#xA;[textqualifier]:= Microsoft.Office.Interop.Excel.XlTextQualifier.xlTextQualifierDoubleQuote, [semicolon]:= True, FieldInfo:= texttype)'Open the first excel the file' &#xA;wbfl = excel.Workbooks(1)&#xA;excel.Visible = True&#xA;Console.WriteLine(&quot;OK10&quot;)&#xA;wsfl = CType(wbfl.Sheets(1), Microsoft.Office.Interop.Excel.Worksheet) 'select a sheet and activates'&#xA;wsfl.Activate()&#xA;&#xA;Dim rng As Microsoft.Office.Interop.Excel.Range&#xA;wsfl.Range(&quot;A:BX&quot;).Copy&#xA;&#xA;'Target file&#xA;wbtf = excel.Workbooks.Open(in_TargetFile, [ReadOnly]:=False) 'Open the second excel file' &#xA;excel.Visible = True&#xA;wstf = CType(wbtf.Sheets(in_SheetTargetFile), Microsoft.Office.Interop.Excel.Worksheet) 'select a sheet and activates'&#xA;wstf.Activate()&#xA;&#xA;wstf.Range(&quot;A1&quot;).PasteSpecial(Microsoft.Office.Interop.Excel.XlPasteType.xlPasteAll)&#xA;&#xA;'Save and Close&#xA;excel.DisplayAlerts = False&#xA;wbfl.Close()&#xA;wbtf.Save()&#xA;wbtf.Close()&#xA;excel.DisplayAlerts = True&#xA;excel.Quit()" DisplayName="data csv to xlsx" sap:VirtualizedContainerService.HintSize="200,123" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+              <ui:InvokeCode.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_FileToLoad">[in_PathSaveFile]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_TargetFile">[in_PathTargetFile.Split("&gt;"c)(0)]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SheetTargetFile">[in_PathTargetFile.Split("&gt;"c)(1)]</InArgument>
+              </ui:InvokeCode.Arguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InvokeCode>
+          </Sequence>
+        </ui:CommentOut.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:CommentOut>
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="436,193" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[Hoja]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[in_ExtraData.Split(";"c)(0)]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:Int32">[NroColumnas]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:Int32">[CInt(in_ExtraData.Split(";"c)(1))]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="s:Int32[]">[ArrayColumns]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="s:Int32[]">[Array.ConvertAll((in_ExtraData.Split(";"c)(2)).Replace("{","").Replace("}","").Split(","c), Function(str) Int32.Parse(str))]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[Range]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[in_ExtraData.Split(";"c)(3)]</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+      </ui:MultipleAssign>
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,376" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,298" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Abre un csv, con algunas columnas como fecha. Luego copia todo el rango usado de &quot;A&quot; hasta &quot;BX&quot;." Code="Dim excel As Microsoft.Office.Interop.Excel.Application&#xA;Dim wbfl As Microsoft.Office.Interop.Excel.Workbook&#xA;Dim wsfl As Microsoft.Office.Interop.Excel.Worksheet&#xA;Dim wbtf As Microsoft.Office.Interop.Excel.Workbook&#xA;Dim wstf As Microsoft.Office.Interop.Excel.Worksheet&#xA;&#xA;excel = New Microsoft.Office.Interop.Excel.Application&#xA;&#xA;&#xA;'Target file&#xA;wbtf = excel.Workbooks.Open(in_TargetFile, [ReadOnly]:=False) 'Open the second excel file' &#xA;Console.WriteLine(&quot;OK5&quot;)&#xA;excel.Visible = True&#xA;wstf = CType(wbtf.Sheets(in_SheetTargetFile), Microsoft.Office.Interop.Excel.Worksheet) 'select a sheet and activates'&#xA;Console.WriteLine(&quot;OK6&quot;)&#xA;wstf.Activate()" DisplayName="data csv to xlsx" sap:VirtualizedContainerService.HintSize="334,206" sap2010:WorkflowViewState.IdRef="InvokeCode_2">
+              <ui:InvokeCode.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_TargetFile">[in_PathTargetFile]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SheetTargetFile">[Hoja]</InArgument>
+              </ui:InvokeCode.Arguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InvokeCode>
+          </Sequence>
+        </ui:CommentOut.Body>
+      </ui:CommentOut>
+      <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Abre un csv, con las columnas indicadas como fecha. Luego copia todo el rango  de columnas indcado al archivo xlsx de detino." Code="Dim excel As Microsoft.Office.Interop.Excel.Application&#xD;&#xA;Dim wbfl As Microsoft.Office.Interop.Excel.Workbook&#xD;&#xA;Dim wsfl As Microsoft.Office.Interop.Excel.Worksheet&#xD;&#xA;Dim wbtf As Microsoft.Office.Interop.Excel.Workbook&#xD;&#xA;Dim wstf As Microsoft.Office.Interop.Excel.Worksheet&#xD;&#xA;&#xD;&#xA;excel = New Microsoft.Office.Interop.Excel.Application&#xD;&#xA;&#xD;&#xA;Dim texttype(in_NumberColumns - 1,1) As Integer&#xD;&#xA;'Coloca la columna como tipo Gral&#xD;&#xA;For i As Integer = 0 To  75&#xD;&#xA;&#x9;texttype(i,0) = i+1&#xD;&#xA;&#x9;texttype(i,1) = 1&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;For Each column As Int32 In in_ArrayColumns&#xD;&#xA;&#x9;texttype(column,0) = column+1&#xD;&#xA;&#x9;texttype(column,1) = 4&#xD;&#xA;Next&#xD;&#xA;&#xD;&#xA;'File to load&#xD;&#xA;'wbfl = excel.Workbooks.Open(in_FileToLoad, [ReadOnly]:=False, [Format]:= 6, [Delimiter]:= &quot;;&quot;)'Open the first excel the file' &#xD;&#xA;excel.Workbooks.OpenText([FileName]:=in_FileToLoad, [dataType]:=Microsoft.Office.Interop.Excel.XlTextParsingType.xlDelimited, _&#xD;&#xA;[textqualifier]:= Microsoft.Office.Interop.Excel.XlTextQualifier.xlTextQualifierDoubleQuote, [semicolon]:= True, FieldInfo:= texttype)'Open the first excel the file' &#xD;&#xA;wbfl = excel.Workbooks(1)&#xD;&#xA;excel.Visible = True&#xD;&#xA;&#xD;&#xA;wsfl = CType(wbfl.Sheets(1), Microsoft.Office.Interop.Excel.Worksheet) 'select a sheet and activates'&#xD;&#xA;wsfl.Activate()&#xD;&#xA;&#xD;&#xA;Dim rng As Microsoft.Office.Interop.Excel.Range&#xD;&#xA;wsfl.Range(in_Range).Copy&#xD;&#xA;&#xD;&#xA;'Threading.Thread.Sleep(5000)&#xD;&#xA;'Target file&#xD;&#xA;wbtf = excel.Workbooks.Open(in_TargetFile, [ReadOnly]:=False) 'Open the second excel file' &#xD;&#xA;&#xD;&#xA;excel.Visible = True&#xD;&#xA;wstf = CType(wbtf.Sheets(in_SheetTargetFile), Microsoft.Office.Interop.Excel.Worksheet) 'select a sheet and activates'&#xD;&#xA;&#xD;&#xA;wstf.Activate()&#xD;&#xA;&#xD;&#xA;wstf.Range(&quot;A1&quot;).PasteSpecial(Microsoft.Office.Interop.Excel.XlPasteType.xlPasteAll)&#xD;&#xA;&#xD;&#xA;'Save and Close&#xD;&#xA;excel.DisplayAlerts = False&#xD;&#xA;wbfl.Close()&#xD;&#xA;wbtf.RefreshAll()&#xD;&#xA;wbtf.Save()&#xD;&#xA;wbtf.Close()&#xD;&#xA;excel.DisplayAlerts = True&#xD;&#xA;excel.Quit()" DisplayName="Copy csv to xlsx" sap:VirtualizedContainerService.HintSize="436,221" sap2010:WorkflowViewState.IdRef="InvokeCode_4">
+        <ui:InvokeCode.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_FileToLoad">[in_PathSaveFile]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_TargetFile">[in_PathTargetFile]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_SheetTargetFile">[Hoja]</InArgument>
+          <InArgument x:TypeArguments="s:Int32[]" x:Key="in_ArrayColumns">[ArrayColumns]</InArgument>
+          <InArgument x:TypeArguments="x:Int32" x:Key="in_NumberColumns">[NroColumnas]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_Range">[Range]</InArgument>
+        </ui:InvokeCode.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeCode>
+      <ui:InvokeCode ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Abre un csv, con algunas columnas como fecha. Luego copia todo el rango usado de &quot;A&quot; hasta &quot;BX&quot;." Code="Dim excel As Microsoft.Office.Interop.Excel.Application&#xA;Dim wbfl As Microsoft.Office.Interop.Excel.Workbook&#xA;Dim wsfl As Microsoft.Office.Interop.Excel.Worksheet&#xA;Dim wbtf As Microsoft.Office.Interop.Excel.Workbook&#xA;Dim wstf As Microsoft.Office.Interop.Excel.Worksheet&#xA;&#xA;excel = New Microsoft.Office.Interop.Excel.Application&#xA;&#xA;Console.WriteLine(&quot;OK0&quot;)&#xA;Dim texttype(in_NumberColumns - 1,1) As Integer&#xA;'Coloca la columna como tipo Gral&#xA;For i As Integer = 0 To  75&#xA;&#x9;texttype(i,0) = i+1&#xA;&#x9;texttype(i,1) = 1&#xA;Next&#xA;Console.WriteLine(&quot;OK1&quot;)&#xA;For Each column As Int32 In in_ArrayColumns&#xA;&#x9;texttype(column,0) = column+1&#xA;&#x9;texttype(column,1) = 4&#xA;Next&#xA;Console.WriteLine(&quot;OK2&quot;)&#xA;'File to load&#xA;'wbfl = excel.Workbooks.Open(in_FileToLoad, [ReadOnly]:=False, [Format]:= 6, [Delimiter]:= &quot;;&quot;)'Open the first excel the file' &#xA;excel.Workbooks.OpenText([FileName]:=in_FileToLoad, [dataType]:=Microsoft.Office.Interop.Excel.XlTextParsingType.xlDelimited, _&#xA;[textqualifier]:= Microsoft.Office.Interop.Excel.XlTextQualifier.xlTextQualifierDoubleQuote, [semicolon]:= True, FieldInfo:= texttype)'Open the first excel the file' &#xA;wbfl = excel.Workbooks(1)&#xA;excel.Visible = True&#xA;Console.WriteLine(&quot;OK&quot;)&#xA;wsfl = CType(wbfl.Sheets(1), Microsoft.Office.Interop.Excel.Worksheet) 'select a sheet and activates'&#xA;wsfl.Activate()&#xA;&#xA;Dim rng As Microsoft.Office.Interop.Excel.Range&#xA;wsfl.Range(in_Range).Copy&#xA;&#xA;'Target file&#xA;wbtf = excel.Workbooks.Open(in_TargetFile, [ReadOnly]:=False) 'Open the second excel file' &#xA;excel.Visible = True&#xA;wstf = CType(wbtf.Sheets(in_SheetTargetFile), Microsoft.Office.Interop.Excel.Worksheet) 'select a sheet and activates'&#xA;wstf.Activate()&#xA;&#xA;wstf.Range(&quot;A1&quot;).PasteSpecial(Microsoft.Office.Interop.Excel.XlPasteType.xlPasteAll)&#xA;&#xA;'Save and Close&#xA;excel.DisplayAlerts = False&#xA;wbfl.Close()&#xA;wbtf.Save()&#xA;wbtf.Close()&#xA;excel.DisplayAlerts = True&#xA;excel.Quit()" DisplayName="data csv to xlsx" sap:VirtualizedContainerService.HintSize="436,206" sap2010:WorkflowViewState.IdRef="InvokeCode_3">
+        <ui:InvokeCode.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_FileToLoad">[in_PathSaveFile]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_TargetFile">[in_PathTargetFile]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_SheetTargetFile">[Hoja]</InArgument>
+          <InArgument x:TypeArguments="s:Int32[]" x:Key="in_ArrayColumns">[ArrayColumns]</InArgument>
+          <InArgument x:TypeArguments="x:Int32" x:Key="in_NumberColumns">[NroColumnas]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_Range">[Range]</InArgument>
+        </ui:InvokeCode.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeCode>
+    </Sequence>
   </Sequence>
 </Activity>
