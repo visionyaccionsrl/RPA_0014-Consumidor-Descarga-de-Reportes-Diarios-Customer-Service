@@ -1,6 +1,6 @@
 {
   "name": "Consumidor Descarga de Reportes Diarios Customer Service",
-  "description": "",
+  "description": "Ingresa a Oracle Applications y descarga los reportes de Open Orders – By Cust/Item(Descr) With QOH Extract, Berry Status Report, Plano Despacho Excel, Price List Report, Item Catalog Extract, XXARX PLANO FACTURACION EXCEL y XXINV Plano Inventarios Excel. Procesa los reportes con sus macros correspondientes o copiando sus datos dentro de planillas de excel.",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.12.3]",
@@ -28,7 +28,8 @@
     "executionType": "Workflow",
     "readyForPiP": false,
     "startsInPiP": false,
-    "mustRestoreAllDependencies": true
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
   },
   "designOptions": {
     "projectProfile": "Developement",
