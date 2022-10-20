@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>670,4051</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>670,4420</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EntryResponsabilidad_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="39">
@@ -92,11 +92,11 @@
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Data.Entity</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="En la aplicación de Oracle.&#xA;Ingresar a &quot;Ver &gt; Solicitudes&quot;.&#xA;Se abre la ventana &quot;Encontrar Solicitudes&quot;, da click en &quot;Encontrar&quot;.&#xA;Envía la hotkey [F11].&#xA;Ingresa en la columna 'Nombre' el nombre del reporte 'in_ReportName'.&#xA;Seleccionamos el primer reporte encontrado en la tabla.&#xA;Clickea en &quot;Refrescar Datos&quot;.&#xA;Selecciona Fase y Estado.&#xA;&#xA;Mientras NoSea(Fase = &quot;Finalizado&quot; Y Estado = &quot;Normal) O Intento &gt; 5:&#xA;- Incrementa Intento en 1.&#xA;- Espera 20 segundos.&#xA;- Clickea &quot;Refrescar Datos&quot;&#xA;- Selecciona Fase y Estado.&#xA;- Evalúa condición.&#xA;&#xA;Verifica que NoSea(Fase = &quot;Finalizado&quot; Y Estado = &quot;Normal):&#xA;- Arroja la Excepcion de Negocio 'Tiempo Agotado'.&#xA;Sino:&#xA;- Continua.&#xA;&#xA;Clickea en &quot;Visualizar Output&quot;.&#xA;Se dirige a &quot;Herramientas &gt; Copiar Archivo&quot;.&#xA;Selecciona descarga como &quot;Text File&quot;.&#xA;Se descarga en la carpeta de descarga y mueve el archivo a la dirección 'in_PathSaveFile'.&#xA;&#xA;Arguments:&#xA;in_ReportName: Nombre del reporte con el que se buscará en la aplicación de Oracle.&#xA;in_PathSaveFile: Dirección con la cual se guardará el archivo descargado.&#xA;in_PathDownloadFolder: Carpeta de Descargas del PC.&#xA;in_Config&#xA;io_DtLog&#xA;in_MailCredential&#xA;in_MailPort&#xA;in_MailServer" DisplayName="DownloadReport" sap:VirtualizedContainerService.HintSize="680,3986" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="En la aplicación de Oracle.&#xA;Ingresar a &quot;Ver &gt; Solicitudes&quot;.&#xA;Se abre la ventana &quot;Encontrar Solicitudes&quot;, da click en &quot;Encontrar&quot;.&#xA;Envía la hotkey [F11].&#xA;Ingresa en la columna 'Nombre' el nombre del reporte 'in_ReportName'.&#xA;Seleccionamos el primer reporte encontrado en la tabla.&#xA;Clickea en &quot;Refrescar Datos&quot;.&#xA;Selecciona Fase y Estado.&#xA;&#xA;Mientras NoSea(Fase = &quot;Finalizado&quot; Y Estado = &quot;Normal) O Intento &gt; 5:&#xA;- Incrementa Intento en 1.&#xA;- Espera 20 segundos.&#xA;- Clickea &quot;Refrescar Datos&quot;&#xA;- Selecciona Fase y Estado.&#xA;- Evalúa condición.&#xA;&#xA;Verifica que NoSea(Fase = &quot;Finalizado&quot; Y Estado = &quot;Normal):&#xA;- Arroja la Excepcion de Negocio 'Tiempo Agotado'.&#xA;Sino:&#xA;- Continua.&#xA;&#xA;Clickea en &quot;Visualizar Output&quot;.&#xA;Se dirige a &quot;Herramientas &gt; Copiar Archivo&quot;.&#xA;Selecciona descarga como &quot;Text File&quot;.&#xA;Se descarga en la carpeta de descarga y mueve el archivo a la dirección 'in_PathSaveFile'.&#xA;&#xA;Arguments:&#xA;in_ReportName: Nombre del reporte con el que se buscará en la aplicación de Oracle.&#xA;in_PathSaveFile: Dirección con la cual se guardará el archivo descargado.&#xA;in_PathDownloadFolder: Carpeta de Descargas del PC.&#xA;in_Config&#xA;io_DtLog&#xA;in_MailCredential&#xA;in_MailPort&#xA;in_MailServer" DisplayName="DownloadReport" sap:VirtualizedContainerService.HintSize="680,4315" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="javaVersionPath" />
       <Variable x:TypeArguments="si:FileInfo" Name="DownloadedFile" />
@@ -110,7 +110,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logger Inicio" sap:VirtualizedContainerService.HintSize="638,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Logger.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logger Inicio" sap:VirtualizedContainerService.HintSize="638,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Logger.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_TransactionId">1</InArgument>
@@ -120,51 +120,41 @@
         <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DtLog">[io_DtLog]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logger Reportes a Descargar" sap:VirtualizedContainerService.HintSize="638,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Logger.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logger Reportes a Descargar" sap:VirtualizedContainerService.HintSize="638,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Logger.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-        </InArgument>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_TransactionId">
           <Literal x:TypeArguments="x:String" Value="" />
         </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_LogType">
-          <Literal x:TypeArguments="x:String">Info</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_StepName">
-          <Literal x:TypeArguments="x:String">Process</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Message">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Reportes a descargar: &quot; + String.Join(&quot;, &quot;, (From r In in_dt_Reports.AsEnumerable() Select r.Field(Of String)(0)).ToList())" />
-        </InArgument>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DtLog">
-          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="io_DtLog" />
-        </InOutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_LogType">Info</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_StepName">Process</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Message">["Reportes a descargar: " + String.Join(", ", (From r In in_dt_Reports.AsEnumerable() Select r.Field(Of String)(0)).ToList())]</InArgument>
+        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DtLog">[io_DtLog]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <uix:NApplicationCard WebDriverMode="{x:Null}" sap2010:Annotation.AnnotationText="Input mode: Simulate" AttachMode="ByInstance" DisplayName="Utilizar Aplicación: Oracle Applications" sap:VirtualizedContainerService.HintSize="638,843" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" OpenMode="Never" ScopeGuid="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard WebDriverMode="{x:Null}" sap2010:Annotation.AnnotationText="Input mode: Simulate" AttachMode="ByInstance" DisplayName="Utilizar Aplicación: Oracle Applications" sap:VirtualizedContainerService.HintSize="638,795" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" OpenMode="Never" ScopeGuid="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Descargar Solicitud" sap:VirtualizedContainerService.HintSize="400,513" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Descargar Solicitud" sap:VirtualizedContainerService.HintSize="242,475" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:CommentOut sap2010:Annotation.AnnotationText="En el entorno de desarrollo no se requirieron estas actividades" DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="358,118" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+            <ui:CommentOut sap2010:Annotation.AnnotationText="En el entorno de desarrollo no se requirieron estas actividades" DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="CommentOut_1">
               <ui:CommentOut.Body>
-                <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="400,524" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="376,506" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Delay DisplayName="Delay 5s" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="358,32" sap2010:WorkflowViewState.IdRef="Delay_2" />
-                  <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'Acepto los'" sap:VirtualizedContainerService.HintSize="358,166" sap2010:WorkflowViewState.IdRef="NCheck_2" ScopeIdentifier="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V1">
+                  <Delay DisplayName="Delay 5s" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
+                  <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'Acepto los'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NCheck_2" ScopeIdentifier="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V1">
                     <uix:NCheck.Target>
                       <uix:TargetAnchorable DesignTimeRectangle="35, 266, 277, 39" ElementType="CheckBox" FriendlyName="'Acepto los'" FullSelectorArgument="&lt;java name='Acepto*' role='check box' /&gt;" FuzzySelectorArgument="&lt;java name='Acepto*' role='check box' check:fulltext='Acepto*' /&gt;" Guid="23ee18bd-8dec-40dc-8a48-9bac8f8b29fb" ImageBase64="" InformativeScreenshot="1a4f562d2e7508dbff5b73a70ff80618.png" ScopeSelectorArgument="&lt;wnd app='jp2launcher.exe' cls='SunAwtDialog' title='Advertencia de Seguridad' /&gt;" SearchSteps="Selector, FuzzySelector">
                         <uix:TargetAnchorable.Anchors>
@@ -175,7 +165,7 @@
                       </uix:TargetAnchorable>
                     </uix:NCheck.Target>
                   </uix:NCheck>
-                  <uix:NClick ClickType="Single" DisplayName="Click 'Ejecutar'" sap:VirtualizedContainerService.HintSize="358,166" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V1">
+                  <uix:NClick ClickType="Single" DisplayName="Click 'Ejecutar'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V1">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable DesignTimeRectangle="373, 274, 75, 23" ElementType="Button" FriendlyName="'Ejecutar'" FullSelectorArgument="&lt;java name='Ejecutar' role='push button' /&gt;" FuzzySelectorArgument="&lt;java name='Ejecutar' role='push button' check:text='Ejecutar' /&gt;" Guid="39047018-8b24-4717-85a2-a73cd9b14483" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE8AAAAbCAYAAAA9K9JnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFmSURBVGhD7ZbJcsMgDED77fgDuJd7OfQYrglXT/A/qYBNLJYmTeRlnOrwZmxLlsOLWD76vgfmNVgeAZZHIJNnrWUegH1V8oZhYH6B5RFgeQRYHgGWR2A1ec5qkEJA13U3hJCgrRtjUoN1rvnusyxd76+sK2+jAf0bec6osQunWMybOjR1ZsxzBhTq3M/vr6xeqn+5nkHLOU9qf/7S8nZfdrtWwj9TYBYQva68ctpiYXHgJy9oHkgpRJl5gClWysP1UgwT/iyhzJjjfw+uSWXzzsOxy9l3U7UuKjiF58W7ZT1834yhuuFPi98qalLZX14jp/VuU9B0X13j6T/F3k9enLb1VHLOtqctmuJhXcvXzTFWfjflHU9eNSXro0qZ19pIAkEk3gikUpkM4zeC+NxvGOka5x1K3j3iIr7wQPZgU3np+IGPJEdml857F1geAZZHgOUReCiPuQ/2lcljnoPlEWB5L9PDDyeMn/NVxQfPAAAAAElFTkSuQmCC" InformativeScreenshot="2cbe7baa5d5212579c0e6eb5ba6f0dd5.png" ScopeSelectorArgument="&lt;wnd app='jp2launcher.exe' cls='SunAwtDialog' title='Advertencia de Seguridad' /&gt;" SearchSteps="Selector, FuzzySelector">
                         <uix:TargetAnchorable.Anchors>
@@ -196,7 +186,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <uix:NClick ClickType="Single" DisplayName="Clic 'Ver (x) ALT x'" sap:VirtualizedContainerService.HintSize="358,61" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V1">
+            <uix:NClick ClickType="Single" DisplayName="Clic 'Ver (x) ALT x'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V1">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="108, 31, 44, 30" FriendlyName="'Ver (x) ALT x'" FullSelectorArgument="&lt;java name='Ver (x) ALT x' role='menu' /&gt;" FuzzySelectorArgument="&lt;java name='Ver (x) ALT x' role='menu' check:text='Ver (x) ALT x' /&gt;" Guid="73b55631-3585-495c-8609-2c1abde92657" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAiCAYAAAAZHFoXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADTSURBVFhH7ZWBCsQgDEP3tX6t/+ThQSAEtYobpdDAo2syygIH97Tgil+glNIikwW8yQLeZAFvsoA3WcCbZYGuE/+U2Z2ZP8KtgHXDyoH5E9JDox1Sn6cCH9PyZ1wV4OdR1sU5Z6MdU/0VnxbgjNEMO6b6K8wCHRzCZF/FGb/LjLJdT7kuwDtzkkHswVdP2SrQGR1Tj3d+VjTDjqn+iqsC8CH1eVeQY1r+jO0Cb2N9oJUDtwIdfCSL/R1cC7xBFvAmC3iTBbyJX+D/rxFYT621xaW2Hzy/xg2ZgYNSAAAAAElFTkSuQmCC" InformativeScreenshot="e30fa3cbccc2244e9b57aad1602ac1b0.png" ScopeSelectorArgument="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - QMGSBOX Cloned 23-AUG-22 From QMGPROD' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -207,7 +197,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NClick ClickType="Single" DisplayName="Clic 'Solicitudes'" sap:VirtualizedContainerService.HintSize="358,61" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V1">
+            <uix:NClick ClickType="Single" DisplayName="Clic 'Solicitudes'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V1">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="0, 0, 0, 0" FriendlyName="'menu item'" FullSelectorArgument="&lt;java name='Ver (x) ALT x' /&gt;&lt;java name='Solicitudes nemotécnico S' /&gt;" FuzzySelectorArgument="&lt;java name='Ver (x) ALT x' /&gt;&lt;java name='Solicitudes nemotécnico S' role='menu item' /&gt;" Guid="9cbbc6b4-180d-436f-a8ee-1bfce1e0e94d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJoAAAAYCAYAAAACh+TEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEaSURBVGhD7dbrDcIwDEbRbMoUTFKxATuwRHcKbUWlYDmu80RCF+mgOHZ+5RMkxO2zriswzOP5igQNwxE0TEHQMAVBwxQEDVMQNExB0DCFK2ghhC/ajCad9ZwrndfUnsNYl0HTLs57mS2XTtD+S5eg7fVJ7mvrs87Nn7201ubS2ppN+94e+qoKWkr203rE2urt65pzWo2+mt9oVu1Zp7zzI3oYyxU0qeYyrTPavjVf0pPkrLaP/prfaLKf61lntH1rvrZnKZlFuZ8HrWZd05O11UN/zW802Zf72vqsr+Zzdbrv7cn9qx76qnqjAaVcf50abRbI4RcNUxA0THEEbf/SmkAvx5OLoGG0z9s+xNt9OX7egJ4+AdvytcQ3yXwX3VG/pVwAAAAASUVORK5CYII=" ScopeSelectorArgument="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - QMGSBOX Cloned * From QMGPROD' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -218,7 +208,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NClick ClickType="Single" DisplayName="Clic 'Encontrar alt o'" sap:VirtualizedContainerService.HintSize="358,61" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V1">
+            <uix:NClick ClickType="Single" DisplayName="Clic 'Encontrar alt o'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V1">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="548, 516, 115, 29" ElementType="Button" FriendlyName="'Encontrar alt o'" FullSelectorArgument="&lt;java name='Encontrar Solicitudes' role='internal frame' /&gt;&lt;java name='Encontrar alt o' role='push button' /&gt;" FuzzySelectorArgument="&lt;java name='Encontrar Solicitudes' role='internal frame' /&gt;&lt;java name='Encontrar alt o' role='push button' check:text='Encontrar alt o' /&gt;" Guid="7e0d4e95-6ce4-4bad-8ecc-aed0086c055e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHcAAAAhCAYAAADj7jRgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFjSURBVGhD7ZntrcIwDEW7KVMwCWIDdmCJ7gSkejdyjZO0iNc45lo6wp9FcPjHdDpfHiQmlBuYldxpmsggSG8lslwcMMaILZJXchHzPBPnIGqC3+RaDyJ+SVESTLkBSGEJptwAXG93yo2MJZhyg0C5gXElN71fCWuftIFHF3Ktfk9G/2FRbgXK/RJbvkjspFdrH/09M9R6hlr35GtpT+7o/pG4kltC78jayvfOSrvWXWsucz0/Gldyrb5E78i6dr/nbuvMonbbA8r9cCZ7EtmXez2g3A9nrVrPehBW7n/PdJ3y2m0PXMktIXf0ja71TWtWq/W+3kUP/dbu0biRS77PT8hNn0Vj7UVCi13qnLwGUeT+InAIn0udE8odGjiEz6XOCeUOC/zBZXaaE8odFviDy+w0J5Q7JHAHj5I3uekffeshxBfSG3LNSm5tkfhii68sdyn+Doh/pLcSK7kkFpQblsvjCYHubwX3yt+nAAAAAElFTkSuQmCC" InformativeScreenshot="f76ec0495fccfb4d00a207ff32c41bc2.png" ScopeSelectorArgument="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - QMGSBOX Cloned 23-AUG-22 From QMGPROD' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -243,7 +233,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="638,110" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="638,100" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -263,9 +253,9 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[dt_ReportsFilter.RowCount &gt; 0 And Intento &lt; 3]" DisplayName="While Reportes Pendientes" sap:VirtualizedContainerService.HintSize="638,1856" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_3">
+    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[dt_ReportsFilter.RowCount &gt; 0 And Intento &lt; 3]" DisplayName="While Reportes Pendientes" sap:VirtualizedContainerService.HintSize="638,1762" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_3">
       <ui:InterruptibleWhile.Body>
-        <Sequence DisplayName="Procesar Reportes" sap:VirtualizedContainerService.HintSize="602,1681" sap2010:WorkflowViewState.IdRef="Sequence_22">
+        <Sequence DisplayName="Procesar Reportes" sap:VirtualizedContainerService.HintSize="602,1597" sap2010:WorkflowViewState.IdRef="Sequence_22">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Int32" Name="indice" />
           </Sequence.Variables>
@@ -275,7 +265,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Assign Intento" sap:VirtualizedContainerService.HintSize="560,70" sap2010:WorkflowViewState.IdRef="Assign_4">
+          <Assign DisplayName="Assign Intento" sap:VirtualizedContainerService.HintSize="560,60" sap2010:WorkflowViewState.IdRef="Assign_4">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">[Intento]</OutArgument>
             </Assign.To>
@@ -283,19 +273,19 @@
               <InArgument x:TypeArguments="x:Int32">[Intento + 1]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[indice]" DataTable="[in_dt_Reports]" DisplayName="For Each Row in in_dt_Reports" sap:VirtualizedContainerService.HintSize="560,1299" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[indice]" DataTable="[in_dt_Reports]" DisplayName="For Each Row in in_dt_Reports" sap:VirtualizedContainerService.HintSize="560,1243" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Reporte" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,1175" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,1129" sap2010:WorkflowViewState.IdRef="Sequence_21">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[Reporte(&quot;Name&quot;).ToString]">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[Reporte(&quot;Name&quot;).ToString]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -303,7 +293,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:LogMessage>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ExcecuteReport workflow" sap:VirtualizedContainerService.HintSize="484,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Secuencias\ExecuteReport.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ExcecuteReport workflow" sap:VirtualizedContainerService.HintSize="484,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Secuencias\ExecuteReport.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="in_javaVersionPath">
                         <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="javaVersionPath" />
@@ -340,7 +330,7 @@
                       </InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <If Condition="[bool_Procesado]" DisplayName="If Procesado" sap:VirtualizedContainerService.HintSize="484,822" sap2010:WorkflowViewState.IdRef="If_4">
+                  <If Condition="[bool_Procesado]" DisplayName="If Procesado" sap:VirtualizedContainerService.HintSize="484,794" sap2010:WorkflowViewState.IdRef="If_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -348,7 +338,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence DisplayName="Buscar y Borrar" sap:VirtualizedContainerService.HintSize="400,626" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                      <Sequence DisplayName="Buscar y Borrar" sap:VirtualizedContainerService.HintSize="376,608" sap2010:WorkflowViewState.IdRef="Sequence_25">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:Int32" Name="indiceBorrar" />
                         </Sequence.Variables>
@@ -357,8 +347,8 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dt_ReportsFilter]" DisplayName="Buscar Reporte en dt_ReportsFilter" sap:VirtualizedContainerService.HintSize="358,301" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Name" LookupValue="[Reporte(&quot;Name&quot;).ToString]" RowIndex="[indiceBorrar]" />
-                        <ui:RemoveDataRow Row="{x:Null}" DataTable="[dt_ReportsFilter]" DisplayName="Remove Reporte segun indice" sap:VirtualizedContainerService.HintSize="358,195" sap2010:WorkflowViewState.IdRef="RemoveDataRow_2" RowIndex="[indiceBorrar]" />
+                        <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dt_ReportsFilter]" DisplayName="Buscar Reporte en dt_ReportsFilter" sap:VirtualizedContainerService.HintSize="334,291" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Name" LookupValue="[Reporte(&quot;Name&quot;).ToString]" RowIndex="[indiceBorrar]" />
+                        <ui:RemoveDataRow Row="{x:Null}" DataTable="[dt_ReportsFilter]" DisplayName="Remove Reporte segun indice" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="RemoveDataRow_2" RowIndex="[indiceBorrar]" />
                       </Sequence>
                     </If.Then>
                     <If.Else>
@@ -381,7 +371,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:ForEachRow>
-          <Assign sap:VirtualizedContainerService.HintSize="560,70" sap2010:WorkflowViewState.IdRef="Assign_5">
+          <Assign sap:VirtualizedContainerService.HintSize="560,60" sap2010:WorkflowViewState.IdRef="Assign_5">
             <Assign.To>
               <OutArgument x:TypeArguments="sd:DataTable">[in_dt_Reports]</OutArgument>
             </Assign.To>
@@ -389,7 +379,7 @@
               <InArgument x:TypeArguments="sd:DataTable">[dt_ReportsFilter.Copy]</InArgument>
             </Assign.Value>
           </Assign>
-          <Delay DisplayName="Delay 20 sec" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="560,32" sap2010:WorkflowViewState.IdRef="Delay_5" />
+          <Delay DisplayName="Delay 20 sec" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="560,22" sap2010:WorkflowViewState.IdRef="Delay_5" />
         </Sequence>
       </ui:InterruptibleWhile.Body>
       <sap:WorkflowViewStateService.ViewState>
@@ -399,7 +389,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:InterruptibleWhile>
-    <If Condition="[dt_ReportsFilter.RowCount &gt; 0]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="638,643" sap2010:WorkflowViewState.IdRef="If_5">
+    <If Condition="[dt_ReportsFilter.RowCount &gt; 0]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="638,605" sap2010:WorkflowViewState.IdRef="If_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -407,13 +397,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="400,446" sap2010:WorkflowViewState.IdRef="Sequence_23">
+        <Sequence sap:VirtualizedContainerService.HintSize="376,418" sap2010:WorkflowViewState.IdRef="Sequence_23">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logger Problema Login" sap:VirtualizedContainerService.HintSize="358,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Logger.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logger Problema Login" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Logger.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_TransactionId">
@@ -425,7 +415,7 @@
               <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DtLog">[io_DtLog]</InOutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendMail ID0 - Problema Login" sap:VirtualizedContainerService.HintSize="358,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Mailing\SendMail.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendMail ID0 - Problema Login" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Mailing\SendMail.xaml">
             <ui:InvokeWorkflowFile.Arguments>
               <InArgument x:TypeArguments="x:Int32" x:Key="in_ID">0</InArgument>
               <InArgument x:TypeArguments="s:String[]" x:Key="in_Adjunto">[{}]</InArgument>
@@ -438,7 +428,7 @@
               <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <Throw DisplayName="Throw BE Falla Login" Exception="[New BusinessRuleException(&quot;Credenciales incorrectas de inicio de sesión.&quot;)]" sap:VirtualizedContainerService.HintSize="358,32" sap2010:WorkflowViewState.IdRef="Throw_2" />
+          <Throw DisplayName="Throw BE Falla Login" Exception="[New BusinessRuleException(&quot;Credenciales incorrectas de inicio de sesión.&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
         </Sequence>
       </If.Then>
       <If.Else>
