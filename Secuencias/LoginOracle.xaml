@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Login_Oracle" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Login_Oracle" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_OracleURL" Type="InArgument(x:String)" />
@@ -8,7 +8,7 @@
   <this:Login_Oracle.in_OracleCredentials>
     <InArgument x:TypeArguments="x:String" />
   </this:Login_Oracle.in_OracleCredentials>
-  <sap:VirtualizedContainerService.HintSize>663,2463</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>656,2335</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -47,7 +47,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="68">
+    <sco:Collection x:TypeArguments="AssemblyReference">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -83,9 +83,11 @@
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Data.Entity</AssemblyReference>
-    </scg:List>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+    </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Ingresa a la dirección ‘in_OracleURL’ proporcionada.&#xA;Busca e ingresa las credenciales ‘in_OracleCredentials’ de login.&#xA;Si el login es correcto continúa. Sino envía un mail informando el fallo.&#xA;Trata de clickear en la responsabilida ‘in_Responsabilidad’ indicada.&#xA;Si el click es correcto continúa. Sino encuentra el elemnto a clickear entonces envía un mail.&#xA;&#xA;Argumentos:&#xA;in_Config&#xA;in_Responsabilidad&#xA;in_OracleURL&#xA;in_MailServer&#xA;in_MailPort&#xA;in_MailCredentail&#xA;in_OracleCredentials&#xA;io_DtLog" DisplayName="LoginOracle" sap:VirtualizedContainerService.HintSize="538,2398" sap2010:WorkflowViewState.IdRef="Sequence_6">
+  <Sequence sap2010:Annotation.AnnotationText="Ingresa a la dirección ‘in_OracleURL’ proporcionada.&#xA;Busca e ingresa las credenciales ‘in_OracleCredentials’ de login.&#xA;Si el login es correcto continúa. Sino envía un mail informando el fallo.&#xA;Trata de clickear en la responsabilida ‘in_Responsabilidad’ indicada.&#xA;Si el click es correcto continúa. Sino encuentra el elemnto a clickear entonces envía un mail.&#xA;&#xA;Argumentos:&#xA;in_Config&#xA;in_Responsabilidad&#xA;in_OracleURL&#xA;in_MailServer&#xA;in_MailPort&#xA;in_MailCredentail&#xA;in_OracleCredentials&#xA;io_DtLog" DisplayName="LoginOracle" sap:VirtualizedContainerService.HintSize="562,2270" sap2010:WorkflowViewState.IdRef="Sequence_6">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="OracleUserName" />
       <Variable x:TypeArguments="ss:SecureString" Name="OraclePassword" />
@@ -96,7 +98,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logger Inicio" sap:VirtualizedContainerService.HintSize="496,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Logger.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logger Inicio" sap:VirtualizedContainerService.HintSize="520,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Logger.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_TransactionId">
@@ -108,19 +110,19 @@
         <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DtLog">[io_DtLog]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Utilizar Navegador Chrome: Conexión" sap:VirtualizedContainerService.HintSize="496,1917" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="IfNotOpen" ScopeGuid="a3605331-bea5-4b63-8798-023de832aba6" Version="V1" WindowResize="Maximize">
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" CloseMode="Never" DisplayName="Utilizar Navegador Chrome: Conexión" sap:VirtualizedContainerService.HintSize="520,2018" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="IfNotOpen" ScopeGuid="a3605331-bea5-4b63-8798-023de832aba6" Version="V1" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="462,1701" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,1792" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_OracleCredentials]" DisplayName="Get Credential Oracle" sap:VirtualizedContainerService.HintSize="420,51" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[OraclePassword]" Username="[OracleUserName]">
+            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_OracleCredentials]" DisplayName="Get Credential Oracle" sap:VirtualizedContainerService.HintSize="444,61" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[OraclePassword]" Username="[OracleUserName]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -128,30 +130,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:GetRobotCredential>
-            <ui:CommentOut sap2010:Annotation.AnnotationText="Se comentó porque el click cambiaba la url cuando no deberia" DisplayName="Comentar Click Language" sap:VirtualizedContainerService.HintSize="420,108" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="376,248" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ClickType="Single" DisplayName="Click 'Language'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a3605331-bea5-4b63-8798-023de832aba6" Version="V1">
-                    <uix:NClick.Target>
-                      <uix:TargetAnchorable BrowserURL="https://oraebsapp910-bp.berryplastics.com:8011/OA_HTML/AppsLocalLogin.jsp?langCode=ESA" DesignTimeRectangle="533, 283, 167, 19" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl parentid='myForm' tag='TABLE' idx='1' /&gt;&lt;webctrl aaname='Español Latinoamericano' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='myForm' tag='TABLE' /&gt;&lt;webctrl aaname='Español Latinoamericano' tag='IMG' type='' class='' /&gt;" Guid="7e5038ab-306b-4e60-9ddf-a8f65c344a57" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAKsAAAAXCAYAAAB04L8XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGnSURBVGhD7ZdrasMwEIR7p96pd8ppXfbHwDCstJZkJ1Y7Hwg0D/kBS3C+DmM2wcNqtsHDarbBw2q2wcNqtiEd1u+fV7reBd9v9L7Vs1b5KFdf7wk89Z26w/opcO+Z56jOzFxT4fNXXO9pPPWdHjmsK1TPvvpuq+fNPNPDio52WWsG4Gc5e1kewM/yzGOqPEBHu5nP+6CXAfgzOXva4T3DPc2zjPeAOzOZ7hn4rRxMfbP2NPaqAe+DLGevlYNKK2dyRvtnNbxWDjLNtPrwWhqM6qDqsGY/aHXhtXKgmpn6ZUWeddSveppfrZUqB+hp/24N4Gt+tw7OdBR0tLuqmVs/AwLVAXuaX62VKg+4o/27dcCe5rNaF1AdnOkwnGt3VTPLf7DQRV/Pfloro/lf00qWq5d1QNVd1czSZwBgjb1q8G6tjOb/TQdVh3UvC1Y1M/UHK2hlrDUD8HmBSgfwelkLPseLOZvrPqh0AC/LAs25M6oDeL2M6XlnMs4rHcDLMiYd1hWqGxozi4fVbIOH1WzD5cNqzF14WM02eFjNNnhYzTZ4WM0mHMcvwKMSqYUeEBgAAAAASUVORK5CYII=" InformativeScreenshot="faca6e3f05bbcbd7725ac3db75a6c813.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='root' title='Cone*' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
-                    </uix:NClick.Target>
-                  </uix:NClick>
-                </Sequence>
-              </ui:CommentOut.Body>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:CommentOut>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Username'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="420,216" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="a3605331-bea5-4b63-8798-023de832aba6" Text="[OracleUserName]" Version="V1">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Username'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="444,226" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="a3605331-bea5-4b63-8798-023de832aba6" Text="[OracleUserName]" Version="V1">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://oraebsapp910-bp.berryplastics.com:8011/OA_HTML/AppsLocalLogin.jsp?langCode=E" DesignTimeRectangle="535, 183, 247, 21" ElementType="InputBox" FriendlyName="'INPUT M__Id'" FullSelectorArgument="&lt;webctrl parentid='myForm' tableRow='1' tag='TABLE' idx='1' /&gt;&lt;webctrl tag='INPUT' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='myForm' tag='TABLE' /&gt;&lt;webctrl tag='INPUT' type='text' class='x4' aaname='Nombre de Usuario' /&gt;" Guid="a0a89c60-36bf-45b5-a59d-04d89b02dd7d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPsAAAAZCAYAAAD3/lgvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADxSURBVHhe7dzRiYNAGIVRS7ADQUlhEUErsL48pBitYsIEdV3WLWD8z4FLQPHxE/LgVAkIQewQxBH7sixpHMf0eDxSXddmVvByx7nn3PXuiP35fF4+ZGblLne9O2JvmuZ78/1+b1eAUuWOc89t225XTrHvb4JdVfk7DyX70/T2K3a4GbFDEGKHIMQOQYgdghA7BCF2CELsEITYIQixQxBihyDEDkGIHYIQOwTxb+z5u9d8w/fsUL7X6/Xt+fJ7difVmN1vfd9vhZ9iz2dVDcOQuq67fMjMylk+g26aprSu61b4KXbg3n7FPs+zmd1oP1L6AEtvfAzAVIO7AAAAAElFTkSuQmCC" InformativeScreenshot="b2219fbd0fbc9e4881c56356e6e1c736.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='root' title='Con*' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -162,7 +141,7 @@
                 </uix:TargetAnchorable>
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="420,241" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="a3605331-bea5-4b63-8798-023de832aba6" SecureText="[OraclePassword]" Version="V1">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="444,251" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="a3605331-bea5-4b63-8798-023de832aba6" SecureText="[OraclePassword]" Version="V1">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://oraebsapp910-bp.berryplastics.com:8011/OA_HTML/AppsLocalLogin.jsp?langCode=ESA" DesignTimeRectangle="535, 205, 247, 21" ElementType="InputBoxPassword" FriendlyName="'INPUT M__Ida'" FullSelectorArgument="&lt;webctrl parentid='myForm' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='myForm' tag='TABLE' /&gt;&lt;webctrl type='password' tag='INPUT' class='x4' aaname='Contraseña' /&gt;" Guid="608f74b9-b467-44cf-9c7f-228ef335adcf" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPsAAAAZCAYAAAD3/lgvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACeSURBVHhe7dPBCYRAFETBDWFyEDPzMBEYs0bxF0FEl03A6SroU5/fp07bttWyLDVNU7XWzOzFm+e5eu+17/tZeNUVOzC2R+zruprZQLu7Yv89gPe7dy12GJjYIYTYIYTYIYTYIYTYIYTYIYTYIYTYIYTYIYTYIYTYIYTYIYTYIYTYIYTYIYTYIYTYIcTf2A/HYWbj7O4ROzAusUOEqi9HZLNePPUa/gAAAABJRU5ErkJggg==" InformativeScreenshot="67affb175b57a99f1ff716590aa8eafb.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='root' title='Conexión' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -173,12 +152,12 @@
                 </uix:TargetAnchorable>
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <uix:NClick ClickType="Single" DisplayName="Click 'Conexion'" sap:VirtualizedContainerService.HintSize="420,156" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a3605331-bea5-4b63-8798-023de832aba6" Version="V1">
+            <uix:NClick ClickType="Single" DisplayName="Click 'Conexion'" sap:VirtualizedContainerService.HintSize="444,166" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a3605331-bea5-4b63-8798-023de832aba6" Version="V1">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://oraebsapp910-bp.berryplastics.com:8011/OA_HTML/AppsLocalLogin.jsp?langCode=ESA" DesignTimeRectangle="535, 233, 73, 19" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl parentid='myForm' tableRow='1' tag='TABLE' /&gt;&lt;webctrl aaname='Conexión' tableRow='5' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='myForm' tag='TABLE' /&gt;&lt;webctrl aaname='Conexión' type='' tag='IMG' class='' /&gt;" Guid="731e19a2-73de-4d32-822a-a0b52798e194" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE0AAAAXCAYAAABOHMIhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPTSURBVFhH7ZZbSJRBFMcF8S0TEvIhfIjQzMSQREjCJFK8ZA9WSITJWlmIl5KQlfDSpohmWkaClq2aWuF11coHU1PM8rLaJqaYaZqZVpiI+XjqfJdxZnd20X0oaPcPf3ZmzpyZ+X4738xnA1ZtWlZoZogLTTvcBuqqVIu3MRlAe93fAg0tBbC2Nm/RrnqSCxlZ5yQqrAyg1TcVwM/lKe5AluaikhTQNKslMutioLV1PITxiS7uAJborwujkK46I9FZFwOtTpMPq7/muAPQ1ul6IDPzKqSlJUNERDgUFuZw+/0t29jYGLR1djaDn5+vQftm/aBCBf2DnRIhUQSabrQbevvquIm0p6aGwdvbC1pba2F1dQ4mJgYhOPgIqNV3uf3/lf39DwrgeLHNuLunFioe5UuURBFo+Gp++PiKm0g7Lu48ZGenMW0DAx3g6bmXaftf/GlmCPJuXZYoiSLQ6jQFsLD4nptI29V1F4yP93NjsmdnRyAjQwmJiRcFyHNzoySG+V1dT8HNzQWcnXdAX98LEpufHxP+kNjYs0Ie1uVYQIA/2Tm4y8PDw0iMfj3NnduYF7+NQZLyuERJFIFWXp2+ofPMzs6O205boThNXteGhkqhLse8vDyhqqpEeLVx0bh4ORYTEwWTk0NCuby8SHhoOYZ9fXz2C3k4htwPTUMzd25TjksKkSiJItDwY46XoO+NQHNw2CosDMv4i3U5hg+4sjLL1OWyo+M2Ul5amgYnp+2kjlYqLwkgVaoUpp0ew9y5TdkktI3sNNzaIyPs2YeLw50h1/UXQ4PWj9F1LNO2tbVl+uKtjWARKN2uPwYd2+jcxoyvZ8KVoxIlUQTavTIlfJl/x02kHR8fY3AR4Bnj6+tD6vr/tr39FhIztXB6V/CM80ZFnYK8vOtMu/4Y5sxtzNPTWkhVKSRKogi04lIVDGifcRNp4yXg7r4b2toahbpW+1K4ORGc3AcfrLT0jlDWaKqZc8XUwukzDfPo7yzcZfips7w8Ax4ee4yeaebObcwNTcUQfSFQoiSKQGt6XgE19be5ifrGWwwfALc+Hs41NWVMXL7B8PzRv8FMLRz74UdzcnIiREZGwPBwN4mFhgZCe3uTUG5ufgxhYUEkRo9h7tzGnHotGtIzYyVKogg0VEaW4s+W/sxNtkTPzL6Fw0E7obGlUiIkioGWk58AvW803AEs0UnJJyEg1EWisy4G2shoP6iyo+H7jwnuIJbk3JuJcOCQE9xX35DorIuBhsJvEqtDBGDHTuyTqLAygIbSjTWSREu1Ioa9MWlxoVllWlZomxbAb0uEAKL+7+/EAAAAAElFTkSuQmCC" InformativeScreenshot="8d02616973e26735f705b0dd9fdc2a75.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='root' title='Conexión' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State Bienvenido" EnableIfExists="False" sap:VirtualizedContainerService.HintSize="420,636" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="a3605331-bea5-4b63-8798-023de832aba6" Version="V1">
+            <uix:NCheckState Exists="{x:Null}" DisplayName="Check App State Bienvenido" EnableIfExists="False" sap:VirtualizedContainerService.HintSize="444,674" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="a3605331-bea5-4b63-8798-023de832aba6" Version="V1">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
@@ -189,13 +168,13 @@
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="376,420" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,448" sap2010:WorkflowViewState.IdRef="Sequence_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logger Problema Login" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Logger.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logger Problema Login" sap:VirtualizedContainerService.HintSize="358,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Logger.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="in_TransactionId">
@@ -207,7 +186,7 @@
                       <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DtLog">[io_DtLog]</InOutArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendMail ID0 - Problema Login" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Mailing\SendMail.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendMail ID0 - Problema Login" sap:VirtualizedContainerService.HintSize="358,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Mailing\SendMail.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:Int32" x:Key="in_ID">0</InArgument>
                       <InArgument x:TypeArguments="s:String[]" x:Key="in_Adjunto">[{}]</InArgument>
@@ -220,7 +199,7 @@
                       <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>
-                  <Throw DisplayName="Throw BE Falla Login" Exception="[New BusinessRuleException(&quot;Credenciales incorrectas de inicio de sesión.&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                  <Throw DisplayName="Throw BE Falla Login" Exception="[New BusinessRuleException(&quot;Credenciales incorrectas de inicio de sesión.&quot;)]" sap:VirtualizedContainerService.HintSize="358,32" sap2010:WorkflowViewState.IdRef="Throw_1" />
                 </Sequence>
               </uix:NCheckState.IfNotExists>
               <uix:NCheckState.Target>
@@ -233,6 +212,28 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NCheckState>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logger Ingreso Exitoso" sap:VirtualizedContainerService.HintSize="444,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Logger.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                  <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_TransactionId">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_LogType">
+                  <Literal x:TypeArguments="x:String">Info</Literal>
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_StepName">
+                  <Literal x:TypeArguments="x:String">Initialization</Literal>
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Message">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Se ingresó correctamente en: &quot; + in_OracleURL" />
+                </InArgument>
+                <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DtLog">
+                  <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="io_DtLog" />
+                </InOutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
