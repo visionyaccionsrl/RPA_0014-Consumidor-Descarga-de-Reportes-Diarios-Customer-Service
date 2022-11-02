@@ -105,6 +105,7 @@
           <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Log">
             <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_Log" />
           </OutArgument>
+          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Mailing" />
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>

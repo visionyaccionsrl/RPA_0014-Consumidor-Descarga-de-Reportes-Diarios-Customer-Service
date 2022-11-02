@@ -11,7 +11,7 @@
   <sap:VirtualizedContainerService.HintSize>606,1097</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>STR003_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="64">
+    <scg:List x:TypeArguments="x:String" Capacity="34">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -49,7 +49,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="35">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -92,6 +92,7 @@
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Default="[New Dictionary(of String, Object)]" Name="Config" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Log" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Reportes" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Mailing" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -107,11 +108,24 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitAllSettings workflow" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Framework\InitAllSettings.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">Data\Config.xlsx</InArgument>
-          <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">[{"Settings","Constants"}]</InArgument>
-          <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">[Config]</OutArgument>
-          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Reportes">[dt_Reportes]</OutArgument>
-          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Log">[dt_Log]</OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">
+            <Literal x:TypeArguments="x:String">Data\Config.xlsx</Literal>
+          </InArgument>
+          <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">
+            <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;Settings&quot;,&quot;Constants&quot;}" />
+          </InArgument>
+          <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">
+            <mva:VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Reportes">
+            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_Reportes" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Log">
+            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_Log" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_Mailing">
+            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_Mailing" />
+          </OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_Reportes]" DisplayName="Read Reportes" sap:VirtualizedContainerService.HintSize="434,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Reportes" WorkbookPath="Data\Config.xlsx" />
@@ -123,7 +137,7 @@
                 <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
               </ui:FilterOperationArgument.Column>
               <ui:FilterOperationArgument.Operand>
-                <InArgument x:TypeArguments="x:String">["XXIN"]</InArgument>
+                <InArgument x:TypeArguments="x:String">["Berry"]</InArgument>
               </ui:FilterOperationArgument.Operand>
             </ui:FilterOperationArgument>
           </scg:List>
@@ -143,10 +157,18 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke DownloadReport workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Secuencias\DownloadReports.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_PathDownloadFolder">[Config("PathDownloadFolder").ToString]</InArgument>
-          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
-          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DtLog">[dt_Log]</InOutArgument>
-          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Reports">[dt_Reportes]</InArgument>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+            <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
+          </InArgument>
+          <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DtLog">
+            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_Log" />
+          </InOutArgument>
+          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Reports">
+            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Reportes" />
+          </InArgument>
+          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Mailing">
+            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dt_Mailing" />
+          </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>

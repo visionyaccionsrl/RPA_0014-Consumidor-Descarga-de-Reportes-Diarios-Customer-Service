@@ -19,7 +19,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>745,1744</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>745,1759</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Send_Mail_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="48">
@@ -113,9 +113,10 @@
       <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Esta secuencia envía un email a partir de sus argumentos y el templatev2.html, el cual está almacenado en la dirección del proyecto ‘Mail\templatev2.html’ donde se coloca en el mismo el nombre del Proyecto, Subproyecto y Cuerpo del mensaje." DisplayName="SendMail" sap:VirtualizedContainerService.HintSize="755,1679" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Esta secuencia envía un email a partir de sus argumentos y el templatev2.html, el cual está almacenado en la dirección del proyecto ‘Mail\templatev2.html’ donde se coloca en el mismo el nombre del Proyecto, Subproyecto y Cuerpo del mensaje." DisplayName="SendMail" sap:VirtualizedContainerService.HintSize="755,1694" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="TemplateMail" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Mailing" />
@@ -126,7 +127,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Start" sap:VirtualizedContainerService.HintSize="713,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start SendMail&quot;]" />
+    <ui:LogMessage DisplayName="Log Message Start" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start SendMail&quot;]" />
     <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_Mailing]" DisplayName="Read Mailing" sap:VirtualizedContainerService.HintSize="713,87" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Mails" WorkbookPath="Data\Config.xlsx" />
     <If Condition="[in_Subject = &quot;&quot;]" DisplayName="If Subject is empty" sap:VirtualizedContainerService.HintSize="713,247" sap2010:WorkflowViewState.IdRef="If_4">
       <If.Then>
@@ -166,7 +167,7 @@
         <OutArgument x:TypeArguments="x:String">[TemplateMail]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String" xml:space="preserve">[TemplateMail.Replace("Proyecto", "Berry").Replace("Subproyecto", "Actualización Diaria Sobrepeso Paquetes").Replace("&lt;!--  Add Body --&gt;", in_Body)]</InArgument>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[TemplateMail.Replace("Proyecto", "Berry").Replace("Subproyecto", "Consumidor Descarga de Reportes Diarios Customer Service").Replace("&lt;!--  Add Body --&gt;", in_Body)]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:LogMessage DisplayName="Registrar mensaje Asunto" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[in_Subject]" />
