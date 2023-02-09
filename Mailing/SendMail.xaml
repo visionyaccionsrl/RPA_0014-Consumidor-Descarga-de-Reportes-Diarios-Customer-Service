@@ -19,7 +19,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>745,1759</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>803,1800</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Send_Mail_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="48">
@@ -74,7 +74,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="76">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="39">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -113,13 +113,13 @@
       <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Esta secuencia envía un email a partir de sus argumentos y el templatev2.html, el cual está almacenado en la dirección del proyecto ‘Mail\templatev2.html’ donde se coloca en el mismo el nombre del Proyecto, Subproyecto y Cuerpo del mensaje." DisplayName="SendMail" sap:VirtualizedContainerService.HintSize="755,1694" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Esta secuencia envía un email a partir de sus argumentos y el templatev2.html, el cual está almacenado en la dirección del proyecto ‘Mail\templatev2.html’ donde se coloca en el mismo el nombre del Proyecto, Subproyecto y Cuerpo del mensaje." DisplayName="SendMail" sap:VirtualizedContainerService.HintSize="755,1735" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="TemplateMail" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Mailing" />
+      <Variable x:TypeArguments="x:TimeSpan" Name="endTime" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -127,7 +127,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Start" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start SendMail&quot;]" />
+    <ui:LogMessage DisplayName="Log Message Start" sap:VirtualizedContainerService.HintSize="713,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Start SendMail&quot;]" />
     <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_Mailing]" DisplayName="Read Mailing" sap:VirtualizedContainerService.HintSize="713,87" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Mails" WorkbookPath="Data\Config.xlsx" />
     <If Condition="[in_Subject = &quot;&quot;]" DisplayName="If Subject is empty" sap:VirtualizedContainerService.HintSize="713,247" sap2010:WorkflowViewState.IdRef="If_4">
       <If.Then>
@@ -162,15 +162,29 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ReadTextFile>
-    <Assign DisplayName="Assign - Template" sap:VirtualizedContainerService.HintSize="713,60" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[TemplateMail]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String" xml:space="preserve">[TemplateMail.Replace("Proyecto", "Berry").Replace("Subproyecto", "Consumidor Descarga de Reportes Diarios Customer Service").Replace("&lt;!--  Add Body --&gt;", in_Body)]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:LogMessage DisplayName="Registrar mensaje Asunto" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[in_Subject]" />
+    <ui:MultipleAssign DisplayName="Multiple Assign TemplateMail" sap:VirtualizedContainerService.HintSize="713,131" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:TimeSpan">[endTime]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:TimeSpan">[System.DateTime.Now.TimeOfDay.Subtract(TimeSpan.Parse(in_Config("startTime").ToString))]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[TemplateMail]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String" xml:space="preserve">[TemplateMail.Replace("&lt;!--  Add Body --&gt;", in_Body).Replace("&lt;PROCESSDURATION&gt;", String.Format("{0}:{1}",endTime.Hours,endTime.Minutes))]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <ui:LogMessage DisplayName="Registrar mensaje Asunto" sap:VirtualizedContainerService.HintSize="713,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[in_Subject]" />
     <If Condition="[in_Adjunto.Length &gt; 0]" DisplayName="If Hay Archivo a Adjuntar" sap:VirtualizedContainerService.HintSize="713,306" sap2010:WorkflowViewState.IdRef="If_3">
       <If.Then>
         <ui:SendMail Email="{x:Null}" MailMessage="{x:Null}" Password="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" AttachmentsCollection="[in_Adjunto]" Bcc="[dt_Mailing.Rows(in_ID)(&quot;CO&quot;).ToString.Replace(&quot; &quot;, &quot;&quot;)]" Body="[TemplateMail]" Cc="[dt_Mailing.Rows(in_ID)(&quot;CC&quot;).ToString.Replace(&quot; &quot;, &quot;&quot;)]" DisplayName="Send SMTP - Con Adjunto" EnableSSL="True" From="[in_Config(&quot;E-Mail_From&quot;).ToString]" sap:VirtualizedContainerService.HintSize="334,148" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="True" Name="[in_Config(&quot;E-Mail_Name&quot;).ToString]" Port="[CInt(in_Config(&quot;E-Mail_Port&quot;).ToString)]" SecureConnection="None" Server="[in_Config(&quot;E-Mail_Server&quot;).ToString]" Subject="[in_Subject]" To="[dt_Mailing.Rows(in_ID)(&quot;To&quot;).ToString.Replace(&quot; &quot;, &quot;&quot;)]">
