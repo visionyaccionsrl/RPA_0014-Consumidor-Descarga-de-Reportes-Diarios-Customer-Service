@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>877,3878</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>829,4006</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>EntryResponsabilidad_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="39">
@@ -94,9 +94,10 @@
       <AssemblyReference>System.Data.Entity</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="En la aplicación de Oracle.&#xA;Ingresar a &quot;Ver &gt; Solicitudes&quot;.&#xA;Se abre la ventana &quot;Encontrar Solicitudes&quot;, da click en &quot;Encontrar&quot;.&#xA;Envía la hotkey [F11].&#xA;Ingresa en la columna 'Nombre' el nombre del reporte 'in_ReportName'.&#xA;Seleccionamos el primer reporte encontrado en la tabla.&#xA;Clickea en &quot;Refrescar Datos&quot;.&#xA;Selecciona Fase y Estado.&#xA;&#xA;Mientras NoSea(Fase = &quot;Finalizado&quot; Y Estado = &quot;Normal) O Intento &gt; 5:&#xA;- Incrementa Intento en 1.&#xA;- Espera 20 segundos.&#xA;- Clickea &quot;Refrescar Datos&quot;&#xA;- Selecciona Fase y Estado.&#xA;- Evalúa condición.&#xA;&#xA;Verifica que NoSea(Fase = &quot;Finalizado&quot; Y Estado = &quot;Normal):&#xA;- Arroja la Excepcion de Negocio 'Tiempo Agotado'.&#xA;Sino:&#xA;- Continua.&#xA;&#xA;Clickea en &quot;Visualizar Output&quot;.&#xA;Se dirige a &quot;Herramientas &gt; Copiar Archivo&quot;.&#xA;Selecciona descarga como &quot;Text File&quot;.&#xA;Se descarga en la carpeta de descarga y mueve el archivo a la dirección 'in_PathSaveFile'.&#xA;&#xA;Arguments:&#xA;in_ReportName: Nombre del reporte con el que se buscará en la aplicación de Oracle.&#xA;in_PathSaveFile: Dirección con la cual se guardará el archivo descargado.&#xA;in_PathDownloadFolder: Carpeta de Descargas del PC.&#xA;in_Config&#xA;io_DtLog&#xA;in_MailCredential&#xA;in_MailPort&#xA;in_MailServer" DisplayName="DownloadReports" sap:VirtualizedContainerService.HintSize="887,3773" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="En la aplicación de Oracle.&#xA;Ingresar a &quot;Ver &gt; Solicitudes&quot;.&#xA;Se abre la ventana &quot;Encontrar Solicitudes&quot;, da click en &quot;Encontrar&quot;.&#xA;Envía la hotkey [F11].&#xA;Ingresa en la columna 'Nombre' el nombre del reporte 'in_ReportName'.&#xA;Seleccionamos el primer reporte encontrado en la tabla.&#xA;Clickea en &quot;Refrescar Datos&quot;.&#xA;Selecciona Fase y Estado.&#xA;&#xA;Mientras NoSea(Fase = &quot;Finalizado&quot; Y Estado = &quot;Normal) O Intento &gt; 5:&#xA;- Incrementa Intento en 1.&#xA;- Espera 20 segundos.&#xA;- Clickea &quot;Refrescar Datos&quot;&#xA;- Selecciona Fase y Estado.&#xA;- Evalúa condición.&#xA;&#xA;Verifica que NoSea(Fase = &quot;Finalizado&quot; Y Estado = &quot;Normal):&#xA;- Arroja la Excepcion de Negocio 'Tiempo Agotado'.&#xA;Sino:&#xA;- Continua.&#xA;&#xA;Clickea en &quot;Visualizar Output&quot;.&#xA;Se dirige a &quot;Herramientas &gt; Copiar Archivo&quot;.&#xA;Selecciona descarga como &quot;Text File&quot;.&#xA;Se descarga en la carpeta de descarga y mueve el archivo a la dirección 'in_PathSaveFile'.&#xA;&#xA;Arguments:&#xA;in_ReportName: Nombre del reporte con el que se buscará en la aplicación de Oracle.&#xA;in_PathSaveFile: Dirección con la cual se guardará el archivo descargado.&#xA;in_PathDownloadFolder: Carpeta de Descargas del PC.&#xA;in_Config&#xA;io_DtLog&#xA;in_MailCredential&#xA;in_MailPort&#xA;in_MailServer" DisplayName="DownloadReports" sap:VirtualizedContainerService.HintSize="839,3941" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="javaVersionPath" />
       <Variable x:TypeArguments="si:FileInfo" Name="DownloadedFile" />
@@ -111,7 +112,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logger Inicio" sap:VirtualizedContainerService.HintSize="845,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Logger.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logger Inicio" sap:VirtualizedContainerService.HintSize="797,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Logger.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_TransactionId">1</InArgument>
@@ -121,7 +122,7 @@
         <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DtLog">[io_DtLog]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logger Reportes a Descargar" sap:VirtualizedContainerService.HintSize="845,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Logger.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logger Reportes a Descargar" sap:VirtualizedContainerService.HintSize="797,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Logger.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_TransactionId">
@@ -133,20 +134,20 @@
         <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DtLog">[io_DtLog]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Oracle Applications - Ingresar a Encontrar Solicitudes" sap:VirtualizedContainerService.HintSize="845,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" OpenMode="Never" ScopeGuid="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Timeout="180" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" DisplayName="Oracle Applications - Ingresar a Encontrar Solicitudes" sap:VirtualizedContainerService.HintSize="797,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" OpenMode="Never" ScopeGuid="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Timeout="180" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Descargar Solicitud" sap:VirtualizedContainerService.HintSize="400,577" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Descargar Solicitud" sap:VirtualizedContainerService.HintSize="380,652" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ClickType="Single" DisplayName="Clic 'Ver (x) ALT x'" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V1">
+            <uix:NClick ClickType="Single" DisplayName="Clic 'Ver (x) ALT x'" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V1">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="108, 31, 44, 30" FriendlyName="'Ver (x) ALT x'" FullSelectorArgument="&lt;java name='Ver (x) ALT x' role='menu' /&gt;" FuzzySelectorArgument="&lt;java name='Ver (x) ALT x' role='menu' check:text='Ver (x) ALT x' /&gt;" Guid="73b55631-3585-495c-8609-2c1abde92657" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAiCAYAAAAZHFoXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADTSURBVFhH7ZWBCsQgDEP3tX6t/+ThQSAEtYobpdDAo2syygIH97Tgil+glNIikwW8yQLeZAFvsoA3WcCbZYGuE/+U2Z2ZP8KtgHXDyoH5E9JDox1Sn6cCH9PyZ1wV4OdR1sU5Z6MdU/0VnxbgjNEMO6b6K8wCHRzCZF/FGb/LjLJdT7kuwDtzkkHswVdP2SrQGR1Tj3d+VjTDjqn+iqsC8CH1eVeQY1r+jO0Cb2N9oJUDtwIdfCSL/R1cC7xBFvAmC3iTBbyJX+D/rxFYT621xaW2Hzy/xg2ZgYNSAAAAAElFTkSuQmCC" InformativeScreenshot="e30fa3cbccc2244e9b57aad1602ac1b0.png" ScopeSelectorArgument="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -157,7 +158,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NClick ClickType="Single" DisplayName="Clic 'Solicitudes'" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V1">
+            <uix:NClick ClickType="Single" DisplayName="Clic 'Solicitudes'" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V1">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="0, 0, 0, 0" FriendlyName="'menu item'" FullSelectorArgument="&lt;java name='Ver (x) ALT x' /&gt;&lt;java name='Solicitudes nemotécnico S' /&gt;" FuzzySelectorArgument="&lt;java name='Ver (x) ALT x' /&gt;&lt;java name='Solicitudes nemotécnico S' role='menu item' /&gt;" Guid="9cbbc6b4-180d-436f-a8ee-1bfce1e0e94d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJoAAAAYCAYAAAACh+TEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEaSURBVGhD7dbrDcIwDEbRbMoUTFKxATuwRHcKbUWlYDmu80RCF+mgOHZ+5RMkxO2zriswzOP5igQNwxE0TEHQMAVBwxQEDVMQNExB0DCFK2ghhC/ajCad9ZwrndfUnsNYl0HTLs57mS2XTtD+S5eg7fVJ7mvrs87Nn7201ubS2ppN+94e+qoKWkr203rE2urt65pzWo2+mt9oVu1Zp7zzI3oYyxU0qeYyrTPavjVf0pPkrLaP/prfaLKf61lntH1rvrZnKZlFuZ8HrWZd05O11UN/zW802Zf72vqsr+Zzdbrv7cn9qx76qnqjAaVcf50abRbI4RcNUxA0THEEbf/SmkAvx5OLoGG0z9s+xNt9OX7egJ4+AdvytcQ3yXwX3VG/pVwAAAAASUVORK5CYII=" ScopeSelectorArgument="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -168,7 +169,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <uix:NClick ClickType="Single" DisplayName="Clic 'Encontrar alt o'" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V1">
+            <uix:NClick ClickType="Single" DisplayName="Clic 'Encontrar alt o'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V1">
               <uix:NClick.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="548, 516, 115, 29" ElementType="Button" FriendlyName="'Encontrar alt o'" FullSelectorArgument="&lt;java name='Encontrar Solicitudes' role='internal frame' /&gt;&lt;java name='Encontrar alt o' role='push button' /&gt;" FuzzySelectorArgument="&lt;java name='Encontrar Solicitudes' role='internal frame' /&gt;&lt;java name='Encontrar alt o' role='push button' check:text='Encontrar alt o' /&gt;" Guid="7e0d4e95-6ce4-4bad-8ecc-aed0086c055e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHcAAAAhCAYAAADj7jRgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFjSURBVGhD7ZntrcIwDEW7KVMwCWIDdmCJ7gSkejdyjZO0iNc45lo6wp9FcPjHdDpfHiQmlBuYldxpmsggSG8lslwcMMaILZJXchHzPBPnIGqC3+RaDyJ+SVESTLkBSGEJptwAXG93yo2MJZhyg0C5gXElN71fCWuftIFHF3Ktfk9G/2FRbgXK/RJbvkjspFdrH/09M9R6hlr35GtpT+7o/pG4kltC78jayvfOSrvWXWsucz0/Gldyrb5E78i6dr/nbuvMonbbA8r9cCZ7EtmXez2g3A9nrVrPehBW7n/PdJ3y2m0PXMktIXf0ja71TWtWq/W+3kUP/dbu0biRS77PT8hNn0Vj7UVCi13qnLwGUeT+InAIn0udE8odGjiEz6XOCeUOC/zBZXaaE8odFviDy+w0J5Q7JHAHj5I3uekffeshxBfSG3LNSm5tkfhii68sdyn+Doh/pLcSK7kkFpQblsvjCYHubwX3yt+nAAAAAElFTkSuQmCC" InformativeScreenshot="f76ec0495fccfb4d00a207ff32c41bc2.png" ScopeSelectorArgument="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -192,7 +193,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:MultipleAssign DisplayName="Copiar dt_Reports" sap:VirtualizedContainerService.HintSize="845,131" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+    <ui:MultipleAssign DisplayName="Copiar dt_Reports" sap:VirtualizedContainerService.HintSize="797,131" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -220,13 +221,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dt_Reports]" DisplayName="For Each Row in in_dt_Reports" sap:VirtualizedContainerService.HintSize="845,1871" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dt_Reports]" DisplayName="For Each Row in in_dt_Reports" sap:VirtualizedContainerService.HintSize="797,1497" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Reporte" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,1756" sap2010:WorkflowViewState.IdRef="Sequence_26">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,1382" sap2010:WorkflowViewState.IdRef="Sequence_26">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -234,7 +235,7 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:CommentOut DisplayName="Try Execute report" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
               <ui:CommentOut.Body>
-                <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="242,305" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="480,1017" sap2010:WorkflowViewState.IdRef="Sequence_36">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -530,7 +531,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:InvokeWorkflowFile>
-            <If Condition="[bool_Procesado]" DisplayName="If Procesado" sap:VirtualizedContainerService.HintSize="484,795" sap2010:WorkflowViewState.IdRef="If_6">
+            <If Condition="[bool_Procesado]" DisplayName="If Procesado" sap:VirtualizedContainerService.HintSize="484,421" sap2010:WorkflowViewState.IdRef="If_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -538,7 +539,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Buscar y Borrar" sap:VirtualizedContainerService.HintSize="376,608" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                <Sequence DisplayName="Buscar y Borrar" sap:VirtualizedContainerService.HintSize="242,234" sap2010:WorkflowViewState.IdRef="Sequence_28">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Int32" Name="indiceBorrar" />
                   </Sequence.Variables>
@@ -547,8 +548,22 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dt_ReportsFilter]" DisplayName="Buscar Reporte en dt_ReportsFilter" sap:VirtualizedContainerService.HintSize="334,291" sap2010:WorkflowViewState.IdRef="LookupDataTable_2" LookupColumnName="Name" LookupValue="[Reporte(&quot;Name&quot;).ToString]" RowIndex="[indiceBorrar]" />
-                  <ui:RemoveDataRow Row="{x:Null}" DataTable="[dt_ReportsFilter]" DisplayName="Remove Reporte segun indice" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="RemoveDataRow_3" RowIndex="[indiceBorrar]" />
+                  <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dt_ReportsFilter]" DisplayName="Buscar Reporte en dt_ReportsFilter" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LookupDataTable_2" LookupColumnName="Name" LookupValue="[Reporte(&quot;Name&quot;).ToString]" RowIndex="[indiceBorrar]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LookupDataTable>
+                  <ui:RemoveDataRow Row="{x:Null}" DataTable="[dt_ReportsFilter]" DisplayName="Remove Reporte segun indice" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="RemoveDataRow_3" RowIndex="[indiceBorrar]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:RemoveDataRow>
                 </Sequence>
               </If.Then>
               <If.Else>
@@ -571,7 +586,77 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <If Condition="[dt_ReportsFilter.RowCount &gt; 0]" DisplayName="Si  Hay Reportes No Procesados" sap:VirtualizedContainerService.HintSize="845,576" sap2010:WorkflowViewState.IdRef="If_7">
+    <If sap2010:Annotation.AnnotationText="Si es antes de las 9 am se envia un mail con dos reportes" Condition="[TimeOfDay &lt;= New DateTime(1,1,1,9,0,0)]" DisplayName="If Enviar Reportes" sap:VirtualizedContainerService.HintSize="797,593" sap2010:WorkflowViewState.IdRef="If_8">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Sequence DisplayName="Enviar Mails" sap:VirtualizedContainerService.HintSize="473,375" sap2010:WorkflowViewState.IdRef="Sequence_37">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="PathPriceList" />
+            <Variable x:TypeArguments="x:String" Name="PathPlanoFacturacion" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MultipleAssign DisplayName="Multiple Assign Archivos" sap:VirtualizedContainerService.HintSize="431,131" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+            <ui:MultipleAssign.AssignOperations>
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[PathPriceList]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">[in_dt_Reports.Rows(3)("PathSaveFile").ToString]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[PathPlanoFacturacion]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">[in_dt_Reports.Rows(5)("PathSaveFile").ToString]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+              </scg:List>
+            </ui:MultipleAssign.AssignOperations>
+          </ui:MultipleAssign>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SendMail ID 7" sap:VirtualizedContainerService.HintSize="431,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="Mailing\SendMail.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_ID">
+                <Literal x:TypeArguments="x:Int32" Value="7" />
+              </InArgument>
+              <InArgument x:TypeArguments="s:String[]" x:Key="in_Adjunto">
+                <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{PathPriceList, PathPlanoFacturacion}" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Body">
+                <Literal x:TypeArguments="x:String" Value="" />
+              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Subject">
+                <Literal x:TypeArguments="x:String" Value="" />
+              </InArgument>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_38">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </If.Else>
+    </If>
+    <If Condition="[dt_ReportsFilter.RowCount &gt; 0]" DisplayName="Si  Hay Reportes No Procesados" sap:VirtualizedContainerService.HintSize="797,576" sap2010:WorkflowViewState.IdRef="If_7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -644,177 +729,5 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:CommentOut DisplayName="Ejecución con reintentos" sap:VirtualizedContainerService.HintSize="845,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="554,1177" sap2010:WorkflowViewState.IdRef="Sequence_27">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[dt_ReportsFilter.RowCount &gt; 0 And Intento &lt; 3]" DisplayName="While Reportes Pendientes" sap:VirtualizedContainerService.HintSize="512,984" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_3">
-            <ui:InterruptibleWhile.Body>
-              <Sequence DisplayName="Procesar Reportes" sap:VirtualizedContainerService.HintSize="476,819" sap2010:WorkflowViewState.IdRef="Sequence_22">
-                <Sequence.Variables>
-                  <Variable x:TypeArguments="x:Int32" Name="indice" />
-                </Sequence.Variables>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="Assign Intento" sap:VirtualizedContainerService.HintSize="434,70" sap2010:WorkflowViewState.IdRef="Assign_4">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:Int32">[Intento]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:Int32">[Intento + 1]</InArgument>
-                  </Assign.Value>
-                </Assign>
-                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[indice]" DataTable="[in_dt_Reports]" DisplayName="For Each Row in in_dt_Reports" sap:VirtualizedContainerService.HintSize="434,437" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
-                  <ui:ForEachRow.Body>
-                    <ActivityAction x:TypeArguments="sd:DataRow">
-                      <ActivityAction.Argument>
-                        <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Reporte" />
-                      </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,313" sap2010:WorkflowViewState.IdRef="Sequence_21">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ExecuteReport workflow" sap:VirtualizedContainerService.HintSize="358,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Secuencias\ExecuteReport.xaml">
-                          <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_ReportName">[Reporte("Name").ToString]</InArgument>
-                            <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Procesado">[bool_Procesado]</OutArgument>
-                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-                            <InArgument x:TypeArguments="sd:DataTable" x:Key="io_DtLog">[io_DtLog]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_PathSaveFile">[Reporte("PathSaveFile").ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_PathTargetFile">[Reporte("PathTargetFile").ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:Int32" x:Key="in_ExecutionCode">[CInt(Reporte("ID_Execution").ToString)]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_Button">[Reporte("Button").ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_ExtraData">[Reporte("ExtraData").ToString]</InArgument>
-                            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_Mailing">[in_dt_Mailing]</InArgument>
-                          </ui:InvokeWorkflowFile.Arguments>
-                        </ui:InvokeWorkflowFile>
-                        <If Condition="[bool_Procesado]" DisplayName="If Procesado" sap:VirtualizedContainerService.HintSize="358,61" sap2010:WorkflowViewState.IdRef="If_4">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <If.Then>
-                            <Sequence DisplayName="Buscar y Borrar" sap:VirtualizedContainerService.HintSize="400,626" sap2010:WorkflowViewState.IdRef="Sequence_25">
-                              <Sequence.Variables>
-                                <Variable x:TypeArguments="x:Int32" Name="indiceBorrar" />
-                              </Sequence.Variables>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dt_ReportsFilter]" DisplayName="Buscar Reporte en dt_ReportsFilter" sap:VirtualizedContainerService.HintSize="358,301" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Name" LookupValue="[Reporte(&quot;Name&quot;).ToString]" RowIndex="[indiceBorrar]" />
-                              <ui:RemoveDataRow Row="{x:Null}" DataTable="[dt_ReportsFilter]" DisplayName="Remove Reporte segun indice" sap:VirtualizedContainerService.HintSize="358,195" sap2010:WorkflowViewState.IdRef="RemoveDataRow_2" RowIndex="[indiceBorrar]" />
-                            </Sequence>
-                          </If.Then>
-                          <If.Else>
-                            <Sequence sap2010:WorkflowViewState.IdRef="Sequence_20">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </Sequence>
-                          </If.Else>
-                        </If>
-                      </Sequence>
-                    </ActivityAction>
-                  </ui:ForEachRow.Body>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                </ui:ForEachRow>
-                <Assign sap:VirtualizedContainerService.HintSize="434,70" sap2010:WorkflowViewState.IdRef="Assign_5">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="sd:DataTable">[in_dt_Reports]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="sd:DataTable">[dt_ReportsFilter.Copy]</InArgument>
-                  </Assign.Value>
-                </Assign>
-                <Delay DisplayName="Delay 5 sec" Duration="00:00:05" sap:VirtualizedContainerService.HintSize="434,32" sap2010:WorkflowViewState.IdRef="Delay_5" />
-              </Sequence>
-            </ui:InterruptibleWhile.Body>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:InterruptibleWhile>
-          <If Condition="[dt_ReportsFilter.RowCount &gt; 0]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="512,61" sap2010:WorkflowViewState.IdRef="If_5">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="400,446" sap2010:WorkflowViewState.IdRef="Sequence_23">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Logger Reportes no Procesados" sap:VirtualizedContainerService.HintSize="358,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Logger.xaml">
-                  <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_TransactionId">
-                      <Literal x:TypeArguments="x:String" Value="" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_LogType">Error</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_StepName">Initialization</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Message">["No se procesaron los reportes: " + String.Join(", ", (From r In in_dt_Reports.AsEnumerable() Select r.Field(Of String)(0)).ToList())]</InArgument>
-                    <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DtLog">[io_DtLog]</InOutArgument>
-                  </ui:InvokeWorkflowFile.Arguments>
-                </ui:InvokeWorkflowFile>
-                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendMail ID5 - Reportes no Procesados" sap:VirtualizedContainerService.HintSize="358,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Mailing\SendMail.xaml">
-                  <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:Int32" x:Key="in_ID">5</InArgument>
-                    <InArgument x:TypeArguments="s:String[]" x:Key="in_Adjunto">[{}]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Body">[in_dt_Mailing.Rows(5)("Body").ToString.Replace("[Reportes]", String.Join(", ", (From r In in_dt_Reports.AsEnumerable() Select r.Field(Of String)(0)).ToList()))]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Subject">
-                      <Literal x:TypeArguments="x:String" Value="" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-                  </ui:InvokeWorkflowFile.Arguments>
-                </ui:InvokeWorkflowFile>
-                <Throw DisplayName="Throw BE Reportes no Procesados" Exception="[New BusinessRuleException(&quot;No se procesaron los reportes: &quot; + String.Join(&quot;, &quot;, (From r In in_dt_Reports.AsEnumerable() Select r.Field(Of String)(0)).ToList()))]" sap:VirtualizedContainerService.HintSize="358,32" sap2010:WorkflowViewState.IdRef="Throw_2" />
-              </Sequence>
-            </If.Then>
-            <If.Else>
-              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_24">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </Sequence>
-            </If.Else>
-          </If>
-        </Sequence>
-      </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
   </Sequence>
 </Activity>

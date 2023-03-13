@@ -38,7 +38,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>803,4691</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>803,4352</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ExcecuteReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="48">
@@ -132,10 +132,9 @@
       <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
       <AssemblyReference>System.Data.Entity</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ExecuteReport" sap:VirtualizedContainerService.HintSize="658,4626" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ExecuteReport" sap:VirtualizedContainerService.HintSize="658,4287" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="si:FileInfo" Name="DownloadedFile" />
       <Variable x:TypeArguments="x:Boolean" Name="Vacio" />
@@ -396,7 +395,7 @@
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NClick sap2010:Annotation.AnnotationText="HK: alt + h" ClickType="Single" DisplayName="Clic 'Herramientas ALT H'" sap:VirtualizedContainerService.HintSize="334,82" sap2010:WorkflowViewState.IdRef="NClick_37" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V1">
+                        <uix:NClick sap2010:Annotation.AnnotationText="HK: alt + h" ClickType="Single" DisplayName="Clic 'Herramientas ALT H'" sap:VirtualizedContainerService.HintSize="262,82" sap2010:WorkflowViewState.IdRef="NClick_37" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V1">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable DesignTimeRectangle="206, 31, 86, 30" FriendlyName="'Herramientas ALT H'" FullSelectorArgument="&lt;java name='Herramientas ALT H' role='menu' /&gt;" FuzzySelectorArgument="&lt;java name='Herramientas ALT H' role='menu' check:text='Herramientas ALT H' /&gt;" Guid="3ab82262-0f14-4421-8ff3-e7a84b6e866d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFoAAAAiCAYAAADf2c6uAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE2SURBVGhD7ZpRisMwEENz2pw2d8riD4EQM3badbSwSPDIaOSWVoR85bgji1K0Scd5nnd4nxRtIkWbSNEmUrSJFG0iRZtI0SZStIkUbSJFm1gWPfTJ/q/Y8Xt2fEfHvyl6B2/+p21Fs3Q/u2KGsOMzEO+H4LFTD+mec95Ds92TrGJL0TxX2dDMY1YPzfxqrrKhLqvmT7KOR0V34jP6mSdZBec8r3w3/yZjOOP5KdvuaFV1rvLYsXiv5zqvs6o6p55neFaX8b7jlUcHo9knnueV72ZFM/bdXHlmlgHLM7rL1ENVtvLd/G2m81CVVb5iS9HwkO5nHrshzXleeZ7hId13Hqo8rpoN8b5jWXTYw6M7ulN1PtTkjjaRok2kaBMp2kSKNpGiTaRoEynaRF7bNem4rusOb3PdP6l14oJBZYahAAAAAElFTkSuQmCC" InformativeScreenshot="977b5834d5334d55aa2dc31fe2daf00c.png" ScopeSelectorArgument="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
                           </uix:NClick.Target>
@@ -408,7 +407,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </uix:NClick>
-                        <uix:NClick ClickType="Single" DisplayName="Clic 'Copiar Archivo...'" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NClick_38" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V1">
+                        <uix:NClick ClickType="Single" DisplayName="Clic 'Copiar Archivo...'" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="NClick_38" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V1">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable DesignTimeRectangle="209, 61, 96, 20" FriendlyName="'Copiar Archivo...'" FullSelectorArgument="&lt;java name='Herramientas ALT H' role='menu' /&gt;&lt;java name='Copiar Archivo*' role='menu item' /&gt;" FuzzySelectorArgument="&lt;java name='Herramientas ALT H' role='menu' /&gt;&lt;java name='Copiar Archivo...' role='menu item' check:text='Copiar Archivo...' /&gt;" Guid="9f51d789-24e0-43c4-aec3-a215ca50f414" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGQAAAAYCAYAAAAMAljuAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFbSURBVGhD7ZrdjcJADIS3U97SAZUgOrgeron0lMORfBr5/LcrLvjBkT5kzzjOohHwwnh+fR9EX5+7OINt244zkH3fmwLc7o9jUEKa2VwPfTg6kEJ0IMXoQIrRgRSjAylGOpAxxi+av0KVXd697zxjhlQg8lBXHzKCz7N6rkrvJwzEOqzUqWekjr7mYe/NSZ2xfE2n2pvzPE3nmsGZFZYDQeQM9vKgmVrzpI+wp+1AzaujOdQy+iqXBJL1kJU52Xuep1s7uLZ8rZ+lVCDUI9YcIu/BWay13tKtHVxbvtbP8pbfEO9QWW9mBzJzn7Unu4Nry9f6WcJAiOihXk+17DO15SGRLn1rZ3ZupZ8lFQhBD2JmfO49D3ucR51rJNI1nzSpe300yxoj9aiWpANZxXt485cOpBj/HkgzRwdSjDMQetHM5nroK74DKcQZCBX0bwcKpvkMZxAvbvfH8QN1bgc0gDk4jAAAAABJRU5ErkJggg==" InformativeScreenshot="0e8e58f06321af66574f47a884c74e1b.png" ScopeSelectorArgument="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - *' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
                           </uix:NClick.Target>
@@ -419,7 +418,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </uix:NClick>
-                        <uix:NClick ClickType="Single" DisplayName="Clic 'push button close'" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="NClick_39" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V1">
+                        <uix:NClick ClickType="Single" DisplayName="Clic 'push button close'" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="NClick_39" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d2bab0f5-b3ec-40ac-b2eb-24c89db9dc0f" Version="V1">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable DesignTimeRectangle="744, 90, 16, 16" ElementType="Button" FriendlyName="'push button'" FullSelectorArgument="&lt;java name='Informe: ID de solicitud -*' role='internal frame' /&gt;&lt;java cls='ToolBar' role='tool bar' /&gt;&lt;java role='push button' /&gt;" FuzzySelectorArgument="&lt;java name='Informe: ID de solicitud - 623039441' role='internal frame' /&gt;&lt;java cls='ToolBar' role='tool bar' /&gt;&lt;java role='push button' /&gt;" Guid="2ad392c7-3931-429d-85c8-a726e10101b2" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB9SURBVDhP7ZHbCcAgDEW7U3dyDtfITt3DEfKZcguClDwURSg0cFAScwjmOBPJLETpIdElS4SAuUjOeZ0QQPphIZGeB1bNFKIBoTV6tXDCd6MnA+EftoJIBrqWUkUITwb2C6sMZ3vX3oJ9S/EavVo4oZYHVq1rKSP8wnmYi9zI5L1ap+a6ZQAAAABJRU5ErkJggg==" InformativeScreenshot="53ab7ba580f1400dc29df11555b1ade3.png" ScopeSelectorArgument="&lt;wnd app='jp2launcher.exe' cls='SunAwtFrame' title='Oracle Applications - OAGSBOX Cloned on 26-SEP-22 From OAGPROD' /&gt;" SearchSteps="Selector" Visibility="Interactive" />
                           </uix:NClick.Target>
@@ -430,7 +429,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </uix:NClick>
-                        <Assign DisplayName="Asignar vacio" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_13">
+                        <Assign DisplayName="Asignar vacio" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_13">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Boolean">[Vacio]</OutArgument>
                           </Assign.To>
@@ -547,7 +546,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <If Condition="[out_Procesado And Not(Vacio)]" DisplayName="Si Fue Procesado" sap:VirtualizedContainerService.HintSize="616,1987" sap2010:WorkflowViewState.IdRef="If_6">
+    <If Condition="[out_Procesado And Not(Vacio)]" DisplayName="Si Fue Procesado" sap:VirtualizedContainerService.HintSize="616,1648" sap2010:WorkflowViewState.IdRef="If_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -555,7 +554,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Download Execute" sap:VirtualizedContainerService.HintSize="580,1800" sap2010:WorkflowViewState.IdRef="Sequence_57">
+        <Sequence DisplayName="Download Execute" sap:VirtualizedContainerService.HintSize="580,1461" sap2010:WorkflowViewState.IdRef="Sequence_57">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -722,38 +721,6 @@
               <InOutArgument x:TypeArguments="sd:DataTable" x:Key="io_DtLog">[io_DtLog]</InOutArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <If Condition="[in_ReportName.StartsWith(&quot;Price&quot;)]" DisplayName="If Price List Report" sap:VirtualizedContainerService.HintSize="538,299" sap2010:WorkflowViewState.IdRef="If_11">
-            <If.Then>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SendMail workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="Mailing\SendMail.xaml">
-                <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="x:Int32" x:Key="in_ID">
-                    <Literal x:TypeArguments="x:Int32" Value="7" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="s:String[]" x:Key="in_Adjunto">
-                    <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{in_PathSaveFile}" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_Body">
-                    <Literal x:TypeArguments="x:String" Value="" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_Subject">
-                    <Literal x:TypeArguments="x:String" Value="" />
-                  </InArgument>
-                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                    <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                  </InArgument>
-                </ui:InvokeWorkflowFile.Arguments>
-              </ui:InvokeWorkflowFile>
-            </If.Then>
-            <If.Else>
-              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_82">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </Sequence>
-            </If.Else>
-          </If>
           <Sequence DisplayName="Procesar Reporte" sap:VirtualizedContainerService.HintSize="538,365" sap2010:WorkflowViewState.IdRef="Sequence_56">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="TargetFile" />
